@@ -1,0 +1,6 @@
+出生日期输入——DateChoose
+下拉列表——spinner
+刷新进度条——progressBar
+自动匹配——autoCompelteTextView
+新闻信息显示——Listview(MainActivity.class)+viewFlipper(图片转换播放)+include(布局)
+登录界面（存储密码）--SharedPreferences

@@ -12,7 +12,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.Light.NoTitleBar">
 
 
         <activity
@@ -52,7 +52,11 @@
 
         <activity android:name=".P_ViewPager" />
 
+        <activity android:name=".P_ViewFlipper" />
 
+        <activity android:name=".P_ScrollView" />
+
+        <activity android:name=".P_SharedPreferences" />
     </application>
 
 </manifest>

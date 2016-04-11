@@ -1,0 +1,42 @@
+
+（一）线性布局（LinearLayout）
+（1）包含的子控件将以横向或竖向的方式排列，具体由android:orientation = "vertical" ||"horizontal" 属性决定；
+（2）gravity属性决定对齐方式，属性值有：center_vertical,center_horizontal,center,right,left,bottom。支持多级连用，bottom|center_vertical。layout_gravity是子类控件决定自身所在位置的属性，仅限线性布局。要么用gravity同一设置，要么每个子控件自己用layout_gravity属性设置，二者只可选一。文字在当前控件对齐方式也用gravity属性设定。（文字内边距 padding属性）
+（3）layout_weight，本身控件占当前父容器的比例
+（4）布局之间可以套用
+
+（二）相对布局（RelativeLayout):相对布局是以子控件间的相对位置或者子类控件相对父类容器的位置的方式排列
+（1）子类控件相对父类容器常用属性
+layout_alignParentXXXX="true"  对齐方式（左、上边）
+layout_marginXXX="30dp" 某边距离
+layout_centerXXXXXX = "true" 哪居中（类似线性布局中的gravity属性）
+（2）子类控件相对子类控件的位置
+layout_(below,toRightOf,above,toLeftOf,alignBaseline文字对齐，toEndOf)="相对控件id"  
+layout_align(Bottom,Left,Right,Top)="@id/" 边缘对齐
+
+（三）帧布局（FrameLayout）:在布局中，所有子元素都不能被指定位置，统统放置于这块区域的左上角，并且后面的子元素直接覆盖在前面的子元素之上，将前面的子元素部分或全部遮挡。
+Layout_gravity属性可设置对齐方式
+此布局可用于控件内部嵌套显示控件。例如：进度条
+布局叠加时使用
+
+（四）绝对布局（AbsoluteLayout）
+又叫做坐标布局，可以指定子元素的绝对位置（XY轴）
+适应性差！慎用！
+子控件属android:layout_x="30dp"  layout_y="30dp"
+
+（五）表格布局（TableLayout）---基本被GridView代替
+TableLayout表格布局模型以行列的形式管理子控件，每一行为一个TableRow的对象，当然也可以是一个View的对象
+1.全局属性（全局哦）
+collapseColumns="1,2":隐藏第1,2索引列。
+shrinkColumns="3":收缩第3索引列，类似自动换行
+stretchColumns="1,2"，拉伸第1,2索引列，以填满剩下的多余空白空间。
+2.局部属性
+layout_column = "1"  该控件显示在第2列
+layout_span = "2"  该控件占据2列
+
+（六）总结：
+（1）尽量多使用线性布局和相对布局，不要使用绝对布局，帧布局仅用于特殊需要。
+（2）在布局层次一样的情况下，建议用线性布局代替相对布局，应为线性布局性能更高一些，如果线性布局的层次大于相对，那还是选择相对。
+（3）将可复用的组件抽取出来并通过Include标签使用
+（4）使用ViewStub标签加载一些不常用的布局，惰性加载，类似主动技能，节省cpu和内存。加载语句 viewstub.inflate();
+（5）使用merge标签减少布局的嵌套层次。布局根节点是Framelayout且不需要设置background或padding属性，可以用merge代替

@@ -1,0 +1,1 @@
+String sid = etSid.getText().toString().trim(); //È¥µôÊ×Î²¿Õ¸ñ

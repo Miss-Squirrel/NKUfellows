@@ -1,0 +1,31 @@
+(一)Activity
+(1)Activity是一个应用程序组件，提供用户与程序交互的界面。
+(2)Android的四大组件：Activity,Service,BroadcastReceiver,Content Provider
+(3)如何创建？
+继承Android的Activity类 -> 重写方法 -> 设置显示布局 -> 在AndroidMainFest文件中，注册Activity
+ <intent-filter>
+    <action android:name="android.intent.action.MAIN" />        <category android:name="android.intent.category.LAUNCHER" />
+ </intent-filter>
+/*此为程序主入口在主文件中的注册语句 */
+（4）Activity的生命周期
+onCreate()创建 onStart()运行  onResume()获取焦点 
+开始活动
+onPause()失去焦点，但对用户可见 onStop()暂停，被完全遮挡，但保留所有状态和成员信息 onDestroy()销毁 onRestart()
+
+
+
+（二）Intent
+（1）功能：协助完成各大组件间的通讯
+（2）页面间的跳转
+* startActivity(intent)——无返回值
+  Intent intent = new Intent(FirstActivity.this,SecondActivity.class) 
+* startActivityForResult(intent,requestCode); ——有返回值
+  //接收第二个页面返回的参数,requestCode是请求标识，resultCode是页面返回标识，data是第二个页面回传的数据
+  onActivityResult(int requestCode,int resultCode,Intent data)
+  //用于第二个页面，用于传回数据给第一个页面，数据其实是一个Intent对象
+  Intent data = new Intent();
+  data.putExtra("data",content); //将数据装入到intent对象中
+  setResult(resultCode,Intent data);
+
+小贴士：Integer.parseInt(XX.getText().toString);
+        finish();   //结束当前页面，自动返回上一页面

@@ -1,0 +1,13 @@
+一、数据存储方式
+1.SharedPreferences
+2.SQLite
+3.Content Provider
+4.File
+
+二、SharedPreferences
+（一）是一种轻型的数据存储方式，本质是基于XML文件存储key-value键值对数据，通常用来存储一些简单的配置信息（如，是否保存密码），位置在APP的data目录下。
+（二）SharedPreferences对象本身只能获取数据而不支持存储和修改，存储和修改是通过Editor对象实现的。实现SharedPreferences存储的步骤如下：
+1.获得SharedPreferences对象
+2.获得SharedPreferences.Editor对象
+3.通过Editor接口的putXxx方法保存key-value对其中Xxx表示不同的数据类型。
+4.通过Editor接口的commit方法保存key-value对。

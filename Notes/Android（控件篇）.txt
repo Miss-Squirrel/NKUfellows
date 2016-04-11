@@ -1,0 +1,153 @@
+1. button的onClick事件的监听与执行
+（1）匿名内部类可以直接new 一个接口
+（2）外部类的代码相对匿名内部类繁琐很多，所以并不常用，但有一个独特的优势：每个子类除了执行自身的onclick事件外，还会执行父类的onClick事件，便于批量操作。因而适用于一类按钮执行同一复杂的逻辑。
+（3）接口方式理解起来最为容易，将主类引入接口，再构建一个onClick方法，即可直接使用，但相对匿名内部类来讲代码执行效率较低。
+ *** 个人认为，匿名内部类和外部类本质上都是匿名内部类，只不过外部类又重新定义了一个使用了OnClickListener接口的类，以可以在此处定义父类onClick方法。
+
+2.文字用dp，布局用sp,已实现随终端分辨率变化而变化
+
+3.设置透明度 v.setAlpha(0.5f);
+
+4.跑马灯效果的实现：
+（1）textview布局部分
+Android:singleLine = True
+Android:ellipsize = "marquee"
+Android:focusable = True
+Android:focusableInTouchMode = True
+（2）MarqueeText类的创建
+由于在复杂布局中，textview不一定能获得焦点，而只有在获得焦点时，textview才能实现滚动效果，故需要新建一个继承TextView的类，使其强行获得焦点。代码实现：
+public class MarqueeText extends TextView {
+    //重载三个构造函数
+    public MarqueeText(Context context) {
+        super(context);
+    }
+    public MarqueeText(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+    public MarqueeText(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+    }
+    //强行获得焦点
+    public boolean isFocused() {
+        return true;
+    }
+}
+（3）使用MarqueeText代替布局文件中的TextView。
+
+5.AutoCompleteTextView控件
+（1）声明控件及适配器
+private AutoCompleteTextView acTextView;
+private String[] res = {"金融学", "金融工程", "管理科学与工程", "管理信息系统"};
+（2）初始化控件
+acTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
+（3）初始化适配器
+ArrayAdapter<String> adapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, res);
+（4）将适配器绑定到控件       
+acTextView.setAdapter(adapter);
+
+6.ListView——用于显示列表（一维）
+（1）数据适配器--连接数据源与视图界面的桥梁
+把复杂的数据填充在指定视图界面上。
+ArrayAdapter(数组适配器)，用于绑定格式单一的数据（纯文字），可以是集合或数组。SimpleAdapter（简单适配器），用于绑定格式复杂的数据，只能是特定泛型集合。
+实现过程：新建适配器-->添加数据源到适配器-->视图加载适配器。
+（2）监听器--程序与用户（系统）交互的桥梁
+OnItemClickListener:可以处理视图中单个条目的点击事件
+OnScrollListener:监测滚动的变化，可以用于视图在滚动中加载数据。
+实现过程：直接设置监听器，在相关的实现方法中补充需要的代码。
+
+7.GridView--在界面上按行、列分布的方式来显示多个组件（二维）
+实现步骤与ListView基本相似，数据源 -> 适配器 -> 适配器绑定于组件
+重要属性：numColumns="",horizontalSpacing = "",verticalSpacing
+
+8,Spinner--实现下拉列表
+arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,list);
+//设置一个下拉列表样式
+arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+监听器用OnItemSelectedListener
+
+
+9.ToggleButton控件与imageview控件
+（1）xml文件—ToggleButton
+  //初始状态为关闭
+ android:checked = "false" 
+  //状态为关闭时，文字显示  
+ android:textOn="开"
+ android:textOff="关"
+（2）Java—声明
+ private ToggleButton tb;
+ private ImageView img;
+（3）implements OnCheckedChangeListener
+ tb = (ToggleButton) findViewById（）
+ img = (ImageView) findViewById（）
+ /*给当前tb设置监听器，通过监听器判断开关状态*/
+ tb.setOnCheckedChangeListener(this);
+（4）onClickChanged方法实现
+ public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+/*
+* 当tb被点击的时候，当前的方法会执行
+* buttonView--代表被点击控件本身
+* isChecked--代表被点击控件的状态
+* 当点击tb时候，更换image的背景
+*/
+img.setBackgroundResource(isChecked ? R.drawable.on:R.drawable.off);}
+
+10.CheckBox控件
+用法与ToggleButton差不多，都是用setOnCeckedChangeListener方法去监听是否为选中状态。
+
+11.获得文本框中的内容方法：
+String text = 控件名.getText().toString();
+
+12.RadioGroup--多选一逻辑的实现
+RadioButton一经选中，无法取消。RadioGroup为RadioButton的集合。
+ATTENTION:接口要选radiogroup的！	RadioGroup的id需要自己设置！
+
+
+13.Mainfest文件
+（1）全局信息
+（2）组件配置
+可设置属性：图标 android:icon 标题 android:label 主题样式 android:theme
+（3）service和activity可以用intent，service只是后台的逻辑处理，没有界面。content provider是用来管理数据库访问以及程序内和程序间数据共享。Broadcast Receiver监听全局活动，全局广播接收者。除了BroadcastReceiver可以使用代码声明外，其他组件都需要在Mainfest文件中注册
+（4）自定义权限可以实现保护某些组件不被轻易访问
+
+14.使用DatePicker实现日期选择
+OnDateChangeListener:当用户更改了DatePicker里的年、月、日时，将触发OnDateChangeListener监听器的onDateChange()事件。
+DatePickerDialog方法可以实现小窗口选择日期
+
+15.ProgressBar--进度条组件，向用户展示某个耗时操作完成的进度
+分为精确显示进度和不精确两类
+小贴士：多个按钮调用同一个onClick方法，在onClick方法中，用switch语句通过id区分
+switch(v.getID()){case R.id.button_1:{}     } 	
+
+16.通过intent调用系统浏览器打开网页
+Uri uri = Uri.parse(url);
+Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+startActivity(intent);	
+*ATTENTION:网址不能省略http://；访问网络权限添加：<uses-permission android:name="android.permission.INTERNET" />
+*启用javaScripte
+WebSettings settings = webView.getSetting();
+setting.setJavaScriptsEnabled(true);
+*判断页面加载状态并用进度条展示出来——webView.setWebChromeClient
+*优先使用缓存加载页面
+setting
+
+17.Fragment
+（1）Fragment在你的应用中应当是一个模块化和、可重用的组件，因为Fragment定义了自己的布局，以及通过使用它自己的生命周期回调方法的那个了它自己的行为，你可以将Fragment包含到多个Activity中。
+（2）Fragment可以作为Activity界面的一部分组成出现，一个Activity中可以有多个Fragment，一个Fragment也可出现在多个Activity中。在Activity运行过程中，可以添加、移除或替换Fragment。Fragment可以响应自己的输入事件，并且有自己的生命周期，它们的生命周期会受宿主Activity的生命周期影响。
+（3）onAttach -> onCreate（创建fragment） -> onActivityCreated (fragment所在Activity启动完成后)  onCreateView -> onStart -> onResume -> onStop -> onDestroyView -> onDestroy -> onDetach
+
+18.ViewPager实现导航(手势滑动切换界面)
+（1）加载显示的页卡
+flater相当于一个容器，可以放view和fragment对象
+（2）配置Adapter——PagerAdapter
+（3）OnPageChangeListener 监听
+
+19.ViewFlipper(图片自动播放+手势支持)
+
+20.ScrollView实现滚动效果
+水平滚动条hotizontalScrollView
+监听器 OnTouchListener，可以监听页面浏览到底部。
+scrollview.scrollTo(x,y)  直接到目标坐标
+scrollview.scrollBy(x,y)  每次都滚动参数
+textview.append(getResources().getString(R.string.content))
+
+
