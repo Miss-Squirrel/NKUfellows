@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\NKUfellows\\myapplication\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "E:\\NKUfellows\\myapplication\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\NKUfellows\\myapplication\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\image2.jpg",
+        "source": "E:\\NKUfellows\\myapplication\\src\\main\\res\\mipmap-hdpi\\image2.jpg"
+    },
+    {
+        "merged": "E:\\NKUfellows\\myapplication\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\image1.jpg",
+        "source": "E:\\NKUfellows\\myapplication\\src\\main\\res\\mipmap-hdpi\\image1.jpg"
+    }
+]
