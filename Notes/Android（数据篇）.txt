@@ -5,9 +5,32 @@
 4.File
 
 二、SharedPreferences
-（一）是一种轻型的数据存储方式，本质是基于XML文件存储key-value键值对数据，通常用来存储一些简单的配置信息（如，是否保存密码），位置在APP的data目录下。
+（一）是一种轻型的数据存储方式，本质是基于XML文件存储key-value键值对数据，通常用来存储一些简单的配置信息（如，是否保存密码），可以存储的数据类型非常有限。位置在APP的data目录下。
 （二）SharedPreferences对象本身只能获取数据而不支持存储和修改，存储和修改是通过Editor对象实现的。实现SharedPreferences存储的步骤如下：
 1.获得SharedPreferences对象
 2.获得SharedPreferences.Editor对象
 3.通过Editor接口的putXxx方法保存key-value对其中Xxx表示不同的数据类型。
 4.通过Editor接口的commit方法保存key-value对。
+
+三、SQLite
+（一）支持2TB大小的数据库，轻量级嵌入式，管理成本很小。
+特点：轻量级（一个动态库、单文件）、独立性（没有依赖，无需安装）、隔离性（全部在一个文件夹中）、跨平台（支持众多操作系统）、多语言接口（支持多种编程语言）、安全性（事务处理）。
+关于事务处理的安全性：通过数据库上的独占性和共享锁来实现独立事务处理。多个进程可以在同一时间读取数据，但是只有一个可以写入数据。
+（二）数据类型
+NULL、Integer、Real、Text、Blob
+空值、整型、浮点型、字符串、二进制对象
+（三）使用须知
+只能通过网络共享进行数据交互，只提供数据库级的权限管理。
+（四）Android中的使用
+1.SQLiteDatabase:  
+（1）提供一些管理SQLite数据库的类。提供创建、删除、执行SQL命令，并执行其他常见的数据库管理任务的方法。每个数据库名字唯一。
+（2）常用方法
+*  db.execSQL(String sql)  //执行SQL语句
+*  db.insert(String table,String nullColumnHack,ContentValues values)（表名、缺省值、HashMap）
+*  db.delete(String table,String whereClause,String[] WhereArgs)(表名、删除条件、删除条件数组值)
+*  db.update(tabble,value,whereClause,whereArgs)
+*  db.query(String table,String[] columns,String selection,String[] selectionArgs,String groupBy,String having,String orderBy,String limit)
+查询语句，表名、列、搜索条件语句，相当于SQL中的where、limit是分页查询限制
+*  db.rawQuery(sql,selectionArgs)
+
+

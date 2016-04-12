@@ -57,6 +57,9 @@
         <activity android:name=".P_ScrollView" />
 
         <activity android:name=".P_SharedPreferences" />
+
+        <activity android:name=".P_SQLite" />
+
     </application>
 
 </manifest>

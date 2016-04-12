@@ -30,25 +30,28 @@ public class P_SharedPreferences extends Activity {
         editor.putString("name", "张三");
         editor.putInt("学号", 1211978);
         editor.putString("密码", "123456");
-        editor.commit(); //一定得commit，否则不生效！
+        editor.apply(); //一定得commit，否则不生效！
         System.out.println(preferences.getString("name","名字"));
-        System.out.println(preferences.getInt("学号",0000000));
+        System.out.println(preferences.getInt("学号",0));
         */
 
 
         etSid = (EditText) findViewById(R.id.editText_sid);
         etPass = (EditText) findViewById(R.id.editText_password);
         checkBox = (CheckBox) findViewById(R.id.checkBox);
-        preferences = getSharedPreferences("nkubs.practice_preferences", MODE_PRIVATE);
+        preferences = getSharedPreferences("myPref",MODE_PRIVATE);
+        editor = preferences.edit();
+
 
 
         int id = preferences.getInt("学号",0);
+        boolean bl = preferences.getBoolean("是否显示用户名",false);
         Log.i("学号", "" + id);
-        if(id == 0){
-            checkBox.setChecked(false);
-        }else{
+        if(bl){
             checkBox.setChecked(true);
-            etSid.setText(id);
+            etSid.setText(id+"");
+        }else{
+            checkBox.setChecked(false);
         }
 
     }
@@ -62,12 +65,11 @@ public class P_SharedPreferences extends Activity {
                 if(sid == preferences.getInt("学号",0) && pass.equals(preferences.getString("密码","")))
                 {
                     if(checkBox.isChecked()){
-                        editor = preferences.edit();
-                        editor.putInt("学号",sid);
+                        editor.putBoolean("是否显示用户名",true);
                         editor.commit();
                         Toast.makeText(P_SharedPreferences.this, "登录成功，用户名已保存", Toast.LENGTH_SHORT).show();
                     }else{
-                        editor.remove("sid");
+                        editor.putBoolean("是否显示用户名",false);
                         Toast.makeText(P_SharedPreferences.this, "登陆成功，用户名已移除", Toast.LENGTH_SHORT).show();
                         editor.commit();
                     }
@@ -78,7 +80,14 @@ public class P_SharedPreferences extends Activity {
             }
             case R.id.button_cancel:
             {
-                etSid.setText("");
+                int id = preferences.getInt("学号",0);
+                if(id == 0){
+                    checkBox.setChecked(false);
+                }else{
+                    checkBox.setChecked(true);
+                    Log.i("学号", "doClick000");
+                    etSid.setText(id+"");
+                }
                 etPass.setText("");
                 break;
             }

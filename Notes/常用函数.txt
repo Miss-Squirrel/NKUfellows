@@ -1,1 +1,1 @@
-String sid = etSid.getText().toString().trim(); //去掉首尾空格
+ int sid = Integer.parseInt(etSid.getText().toString().trim()); //去掉首尾空格
