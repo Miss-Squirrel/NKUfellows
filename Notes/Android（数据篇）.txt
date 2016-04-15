@@ -4,6 +4,8 @@
 3.Content Provider
 4.File
 
+
+
 二、SharedPreferences
 （一）是一种轻型的数据存储方式，本质是基于XML文件存储key-value键值对数据，通常用来存储一些简单的配置信息（如，是否保存密码），可以存储的数据类型非常有限。位置在APP的data目录下。
 （二）SharedPreferences对象本身只能获取数据而不支持存储和修改，存储和修改是通过Editor对象实现的。实现SharedPreferences存储的步骤如下：
@@ -12,16 +14,21 @@
 3.通过Editor接口的putXxx方法保存key-value对其中Xxx表示不同的数据类型。
 4.通过Editor接口的commit方法保存key-value对。
 
+
+
 三、SQLite
 （一）支持2TB大小的数据库，轻量级嵌入式，管理成本很小。
 特点：轻量级（一个动态库、单文件）、独立性（没有依赖，无需安装）、隔离性（全部在一个文件夹中）、跨平台（支持众多操作系统）、多语言接口（支持多种编程语言）、安全性（事务处理）。
 关于事务处理的安全性：通过数据库上的独占性和共享锁来实现独立事务处理。多个进程可以在同一时间读取数据，但是只有一个可以写入数据。
+
 （二）数据类型
 NULL、Integer、Real、Text、Blob
 空值、整型、浮点型、字符串、二进制对象
+
 （三）使用须知
 只能通过网络共享进行数据交互，只提供数据库级的权限管理。
-（四）Android中的使用
+
+（四）通过SQL语句对SQLite进行操作
 1.SQLiteDatabase:  
 （1）提供一些管理SQLite数据库的类。提供创建、删除、执行SQL命令，并执行其他常见的数据库管理任务的方法。每个数据库名字唯一。
 （2）常用方法
@@ -29,8 +36,31 @@ NULL、Integer、Real、Text、Blob
 *  db.insert(String table,String nullColumnHack,ContentValues values)（表名、缺省值、HashMap）
 *  db.delete(String table,String whereClause,String[] WhereArgs)(表名、删除条件、删除条件数组值)
 *  db.update(tabble,value,whereClause,whereArgs)
+
 *  db.query(String table,String[] columns,String selection,String[] selectionArgs,String groupBy,String having,String orderBy,String limit)
 查询语句，表名、列、搜索条件语句，相当于SQL中的where、limit是分页查询限制
 *  db.rawQuery(sql,selectionArgs)
+！查询语句返回的结果是Cursor类——游标接口，为了避免系统报错及减小内存占用，需要手动释放内存，即cursor.close();db.close()
+getCount() 总记录条数；inFirst() 判断是否第一条记录；inLast() 判断是否最后一条记录；moveToFirst() 移动到第一条记录;moveToLast()移动到最后一条记录，move(int offset) 移动到指定记录，moveToNext() 移动到下一条记录，moveToPrevious() 移动到上一条记录，getColumnIndexOrThrow(String columnName) 据列名称获得列索引，getInt(int columnIndex) 获得指定列索引的int类型值，getString(int columnIndex) 获得指定列索引的String类型值
+
+（五）ContentValue--推荐使用！直接用方法操作数据库而不是SQL语句
+
+（六）SQLiteOpenHelper--SQLiteDataBase的帮助类，用于管理数据库的创建和版本更新，一般是建立一个类继承它，并重写onCreate()和onUpgrade()方法，使用时直接实例化类就行。
+
+
+四、File——减少内存的占用，存储至SD卡 
+（一）Android中文件存储的操作
+Activity的openFileOutput()方法可以用于把数据输出到文件中，创建的文件保存在/data/data/<package name>/file目录，实现过程与在java中保存数据到文件中是一样的。
+ File f = Environment.getExternalStorageDirectory(); //获取存储卡地址  File file = new File(f,"P_FileSave");
+(二)模式介绍
+1.MODE_PRIVATE
+  文件私有，只能被应用本身访问，在该模式下，写入的内容会覆盖原文件
+2.MODE_APPEND
+  该模式下会检查文件是否存在，存在就追加内容，否则新建文件
+3.MODE_WORLD_READABLE和MODE_WORLD_WRITABLE
+  用来控制其他应用是否有权限读写该文件
+（三）读写数据
+默认目录，直接 FileOutputStream fos = openFileOutPut("文件名"，模式) 即可。
+外部存储，稍微麻烦，详见P_FileWrite
 
 

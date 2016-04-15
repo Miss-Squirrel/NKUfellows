@@ -29,3 +29,25 @@ onPause()失去焦点，但对用户可见 onStop()暂停，被完全遮挡，但保留所有状态和成员信
 
 小贴士：Integer.parseInt(XX.getText().toString);
         finish();   //结束当前页面，自动返回上一页面
+
+
+
+（三）ContentProvider——应用间数据共享
+继承抽象类ContentProvider，重载各方法，以实现数据的增删改查
+Uri:通用资源标识符，用于指定操作数据，通过UriMatcher类匹配
+使用ContentResolver对ContentProvider中的数据进行增删改查
+
+
+
+（四）BroadcastReceiver
+
+
+
+（五）Service
+后台运行，不可见，优先级高于Activity，可用于记录位置信息
+1.类型
+（1）本地服务——应用内部
+（2）远程服务——远程服务
+2.系统服务
+直接在Activity中使用getSystemService()方法
+

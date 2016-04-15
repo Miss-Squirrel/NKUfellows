@@ -6,6 +6,9 @@
         android:name="android.permission.INTERNET"
         />
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -19,10 +22,13 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
+
         </activity>
 
 
@@ -58,7 +64,19 @@
 
         <activity android:name=".P_SharedPreferences" />
 
-        <activity android:name=".P_SQLite" />
+        <activity android:name=".P_SQLite"
+            android:icon="@mipmap/ic_launcher"/>
+
+        <activity android:name=".P_SQLiteCV"
+            android:icon="@mipmap/ic_launcher"/>
+
+        <activity android:name=".P_FileSave" />
+
+        <activity android:name=".P_FileWrite" />
+
+        <activity android:name=".P_ContentProvider" />
+
+
 
     </application>
 
