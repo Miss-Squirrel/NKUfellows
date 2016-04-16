@@ -76,6 +76,8 @@
 
         <activity android:name=".P_ContentProvider" />
 
+        <activity android:name=".P_MarqueeText" />
+
 
 
     </application>

@@ -18,7 +18,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
 
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
@@ -28,9 +28,21 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <activity android:name="nkubs.myapplication.Welcome" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="nkubs.myapplication.Login"
             android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="nkubs.myapplication.Login" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity
             android:name="nkubs.myapplication.Search"
@@ -45,9 +57,9 @@
             android:name="nkubs.myapplication.SignUp"
             android:label="Sign up" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="nkubs.myapplication.SignUp" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\NKUfellows\\myapplication\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
-        "source": "E:\\NKUfellows\\myapplication\\src\\main\\res\\menu\\menu_main.xml"
-    },
-    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
         "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\menu\\menu_main.xml"
     }

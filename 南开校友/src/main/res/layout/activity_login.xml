@@ -15,7 +15,7 @@
         android:text="@string/sid"
         android:textSize="30sp"
         android:id="@+id/TextView_sid"
-        android:layout_marginTop="178dp"
+        android:layout_marginTop="140dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -31,6 +31,25 @@
         android:layout_toRightOf="@+id/TextView_sid"
         android:layout_toEndOf="@+id/TextView_sid" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码:"
+        android:textSize="30sp"
+        android:id="@+id/TextView_password"
+        android:layout_below="@+id/TextView_sid"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_password"
+        android:hint="请输入密码"
+        android:layout_alignTop="@+id/TextView_password"
+        android:layout_toRightOf="@+id/TextView_password"
+        android:layout_toEndOf="@+id/TextView_password" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,33 +57,27 @@
         android:id="@+id/button_login"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="135dp" />
+        android:layout_marginBottom="210dp" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="搜索"
-        android:id="@+id/button_search"
-        android:onClick="onClick"
-        android:layout_marginBottom="50dp"
+        android:text="取消"
+        android:id="@+id/button_cancel"
+        android:layout_alignTop="@+id/button_login"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="68dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="没有账号？点我去注册"
+        android:id="@+id/textView_gosignup"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-
-        <nkubs.myapplication.MarqueeText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:ellipsize="marquee"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="我叫王大锤，今年33岁，我的梦想是当上总经理，出任CEO，迎娶白富美，走上人生巅峰"
-            android:id="@+id/textView"
-            android:textSize="30sp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:clickable="true"/>
 
 
 </RelativeLayout>

@@ -16,7 +16,7 @@ public class P_SQLite extends Activity{
         //创建一个数据库，并打开，如果已经存在，就直接打开
         SQLiteDatabase db = openOrCreateDatabase("UserInfo.db",MODE_PRIVATE,null);
         //创建表,主键名称前加下划线_！
-        db.execSQL("create table if not exists usertb(_sid integer primary key,name text not null,city text not null)");
+        db.execSQL("create l_table if not exists usertb(_sid integer primary key,name text not null,city text not null)");
         //插入数据，注意字段用单引号！
         //db.execSQL("insert into usertb(_sid,name,city) values(1211978,'张三','天津')");
         //db.execSQL("insert into usertb(_sid,name,city) values(1211768,'奋斗','北京')");

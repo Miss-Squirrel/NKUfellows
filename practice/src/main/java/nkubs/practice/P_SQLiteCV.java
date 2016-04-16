@@ -17,7 +17,7 @@ public class P_SQLiteCV extends Activity {
         setContentView(R.layout.l_include);
 
         SQLiteDatabase db = openOrCreateDatabase("friendsList.db", MODE_PRIVATE, null);
-        db.execSQL("create table if not exists friendsList2(_id integer primary key autoincrement, sid1 integer not null, sid2 integer not null)");
+        db.execSQL("create l_table if not exists friendsList2(_id integer primary key autoincrement, sid1 integer not null, sid2 integer not null)");
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("sid1",1211768);

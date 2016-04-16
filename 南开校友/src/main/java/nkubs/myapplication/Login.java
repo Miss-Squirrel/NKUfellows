@@ -7,10 +7,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Login extends Activity {
 
-    private EditText editText;
+    private EditText sidEditText;
+    private EditText passEditText;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +22,16 @@ public class Login extends Activity {
         //将java与layout文件进行关联，即将布局xml文件引入带activity当中
         setContentView(R.layout.activity_login);
 
-
         /*
          * 初始化当前所需要的控件
          * findViewById--返回的是一个View的对象（所有控件的父类）
          * 设置button的监听，通过监听器实现我们点击BUTTON要操作的事情
          */
         Button loginButton = (Button) findViewById(R.id.button_login);
-        Button searchButton = (Button) findViewById(R.id.button_search);
+        final Button cancelButton = (Button) findViewById(R.id.button_cancel);
+        sidEditText = (EditText) findViewById(R.id.EditText_sid);
+        passEditText = (EditText) findViewById(R.id.EditText_password);
+        textView = (TextView) findViewById(R.id.textView_gosignup);
 
 
         /*匿名内部类*/
@@ -38,13 +43,16 @@ public class Login extends Activity {
             }
         });
 
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cancelButton.setText("");
+            }
+        });
 
-        editText = (EditText) findViewById(R.id.EditText_sid);
 
 
-
-
-        searchButton.setOnClickListener(new View.OnClickListener(){
+     /* searchButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -54,6 +62,14 @@ public class Login extends Activity {
                 Intent intent = new Intent(Login.this, Search.class);
                 intent.putExtra("sid", sid);
                 startActivity(intent);
+            }
+        });*/
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(Login.this, SignUp.class);
+                startActivity(intent2);
             }
         });
 

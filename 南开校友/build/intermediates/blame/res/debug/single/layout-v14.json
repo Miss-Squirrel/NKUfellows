@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\NKUfellows\\myapplication\\build\\intermediates\\res\\merged\\debug\\layout-v14\\abc_activity_chooser_view.xml",
-        "source": "E:\\NKUfellows\\myapplication\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout-v14\\abc_activity_chooser_view.xml"
-    },
-    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout-v14\\abc_activity_chooser_view.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout-v14\\abc_activity_chooser_view.xml"
     }

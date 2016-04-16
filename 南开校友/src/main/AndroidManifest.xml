@@ -11,10 +11,10 @@
 
     <application
         android:allowBackup="true"
+        android:theme="@android:style/Theme.Light.NoTitleBar"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:supportsRtl="true">
         <!--
              ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -24,8 +24,21 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
+            android:name=".Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
             android:name=".Login"
             android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="nkubs.myapplication.Login"></action>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -40,11 +53,12 @@
         <activity
             android:name=".SignUp"
             android:label="Sign up">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-            </activity>
+            <intent-filter>
+                <action android:name="nkubs.myapplication.SignUp"></action>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
 
 
     </application>
