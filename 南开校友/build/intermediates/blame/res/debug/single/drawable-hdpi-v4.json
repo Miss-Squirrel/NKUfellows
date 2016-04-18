@@ -168,12 +168,12 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable-hdpi\\abc_spinner_ab_disabled_holo_light.9.png"
     },
     {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_holo_dark.9.png",
-        "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable-hdpi\\abc_list_divider_holo_dark.9.png"
-    },
-    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_longpressed_holo.9.png",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable-hdpi\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_list_divider_holo_dark.9.png",
+        "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable-hdpi\\abc_list_divider_holo_dark.9.png"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ab_bottom_solid_dark_holo.9.png",

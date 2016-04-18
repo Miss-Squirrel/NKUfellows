@@ -1,10 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:NKUfellows ="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Welcome">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_friendsList"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="好友列表"
+        NKUfellows:showAsAction="always"/>
+        <!--android:icon="@drawable/icon_facebook"-->
+
+    <item
+        android:id ="@+id/action_add"
+        android:orderInCategory="100"
+        android:title="添加好友"
+        NKUfellows:showAsAction="always" />
+        <!--android:icon="@drawable/icon_skype"-->
+
 </menu>
+
+

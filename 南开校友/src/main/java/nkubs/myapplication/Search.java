@@ -25,7 +25,7 @@ public class Search extends Activity implements CompoundButton.OnCheckedChangeLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.framgent_signupsid);
         Log.i("tag", "Search --> onCreate");
          /*
          * 初始化控件

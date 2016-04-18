@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="性别"
+       android:textSize="27sp"
+       android:id="@+id/TextView_SignUpFollow_Gender"
+       android:layout_marginTop="70dp"/>
+
+
+    <RadioGroup
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/radiogroup"
+        android:layout_toRightOf="@+id/TextView_SignUpFollow_Gender"
+        android:layout_alignTop="@+id/TextView_SignUpFollow_Gender"
+        android:layout_alignLeft="@+id/EditText_SignUpFollow_City">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="男"
+        android:textSize="24sp"
+        android:checked="true"
+        android:id="@+id/radioButton1" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="女"
+        android:textSize="24sp"
+        android:checked="false"
+        android:id="@+id/radioButton2" />
+
+    </RadioGroup>
+
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否公开手机号"
+        android:id="@+id/checkBox"
+        android:checked="true"
+        android:layout_below="@+id/EditText_SignUpFollow_PasswordRepeat"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="所在城市"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUpFollow_City"
+        android:layout_marginTop="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_SignUpFollow_City"
+        android:hint="请输入您目前所在城市"
+        android:layout_alignTop="@+id/TextView_SignUpFollow_City"
+        android:layout_toRightOf="@+id/TextView_SignUpFollow_City"
+        android:layout_toEndOf="@+id/TextView_SignUpFollow_City"
+        android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="行业领域"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUpFollow_Career"
+        android:layout_below="@+id/TextView_SignUpFollow_City"
+        android:layout_marginTop="40dp"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinner_SignUpFollow_Career"
+        android:layout_alignTop="@+id/TextView_SignUpFollow_Career"
+        android:layout_toRightOf="@+id/TextView_SignUpFollow_Career"
+        android:layout_toEndOf="@+id/TextView_SignUpFollow_Career"
+        android:layout_above="@+id/TextView_SignUpFollow_MobileNum"
+        android:layout_alignBottom="@+id/TextView_SignUpFollow_Career"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机号码"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUpFollow_MobileNum"
+        android:layout_below="@+id/TextView_SignUpFollow_Career"
+        android:layout_marginTop="40dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_SignUpFollow_MobileNum"
+        android:hint="请输入手机号码"
+        android:layout_alignTop="@+id/TextView_SignUpFollow_MobileNum"
+        android:layout_toRightOf="@+id/TextView_SignUpFollow_MobileNum"
+        android:layout_toEndOf="@+id/TextView_SignUpFollow_MobileNum" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUpFollow_Password"
+        android:layout_below="@+id/TextView_SignUpFollow_MobileNum"
+        android:layout_marginTop="40dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_SignUpFollow_Password"
+        android:hint="请输入密码"
+        android:layout_alignTop="@+id/TextView_SignUpFollow_Password"
+        android:layout_toRightOf="@+id/TextView_SignUpFollow_Password"
+        android:layout_toEndOf="@+id/TextView_SignUpFollow_Password"
+        android:layout_alignLeft="@+id/EditText_SignUpFollow_MobileNum"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认密码"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUpFollow_PasswordRepeat"
+        android:layout_below="@+id/TextView_SignUpFollow_Password"
+        android:layout_marginTop="40dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_SignUpFollow_PasswordRepeat"
+        android:hint="请再次输入密码"
+        android:layout_alignTop="@+id/TextView_SignUpFollow_PasswordRepeat"
+        android:layout_toRightOf="@+id/TextView_SignUpFollow_PasswordRepeat"
+        android:layout_toEndOf="@+id/TextView_SignUpFollow_PasswordRepeat"
+        android:layout_alignLeft="@+id/EditText_SignUpFollow_MobileNum"/>
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:id="@+id/button_signUp"
+        android:background="@color/NkuPurple"
+        android:onClick="onClick"
+        android:layout_below="@+id/checkBox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
+
+</RelativeLayout>

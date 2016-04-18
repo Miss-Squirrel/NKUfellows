@@ -15,15 +15,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=" 南开校友"
         android:supportsRtl="true"
-        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        android:theme="@style/NKU_theme" >
 
-        <!--
-             ATTENTION: This was auto-generated to add Google Play services to your project for
-             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
-        -->
+        <!-- android:label="@string/app_name" -->
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -35,9 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="nkubs.myapplication.Login"
-            android:label="@string/title_activity_login" >
+        <activity android:name="nkubs.myapplication.Login" >
             <intent-filter>
                 <action android:name="nkubs.myapplication.Login" />
 
@@ -54,13 +49,68 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="nkubs.myapplication.SignUp"
-            android:label="Sign up" >
+            android:name="nkubs.myapplication.SignUpFollow"
+            android:label="完善个人信息" >
             <intent-filter>
                 <action android:name="nkubs.myapplication.SignUp" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity android:name="nkubs.myapplication.SignUp" >
+            <action android:name="nkubs.myapplication.SignUp" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.News" >
+            <action android:name="nkubs.myapplication.News" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows" >
+            <action android:name="nkubs.myapplication.Fellows" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Donation" >
+            <action android:name="nkubs.myapplication.Donation" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Association" >
+            <action android:name="nkubs.myapplication.Association" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Mine" >
+            <action android:name="nkubs.myapplication.Mine" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows_Friends" >
+            <action android:name="nkubs.myapplication.FriendsList" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows_Find" >
+            <action android:name="nkubs.myapplication.Fellows_Find" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows_Find_Accurate" >
+            <action android:name="nkubs.myapplication.Find_Accurate" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows_Find_Condition" >
+            <action android:name="nkubs.myapplication.Find_Condition" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows_Find_Contacts" >
+            <action android:name="nkubs.myapplication.Find_Contacts" />
+
+            <category android:name="android.intent.category.DEFAULT" />
         </activity>
     </application>
 

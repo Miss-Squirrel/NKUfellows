@@ -1,5 +1,6 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +24,10 @@ public class Welcome extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
+
 
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper);
         //以动态方式为ViewFlipper加入View
@@ -55,6 +60,7 @@ public class Welcome extends Activity {
         imageView.setBackgroundResource(resID[i]); //这种可以自适应
         return imageView;
     }
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -91,7 +97,10 @@ public class Welcome extends Activity {
             }
         }
 
-
         return super.onTouchEvent(event);
     }
+
+
+
+
 }

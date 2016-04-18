@@ -1,9 +1,9 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +22,11 @@ public class Login extends Activity {
         //将java与layout文件进行关联，即将布局xml文件引入带activity当中
         setContentView(R.layout.activity_login);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setDisplayShowHomeEnabled(false); //移除icon
+
+
         /*
          * 初始化当前所需要的控件
          * findViewById--返回的是一个View的对象（所有控件的父类）
@@ -39,14 +44,18 @@ public class Login extends Activity {
             @Override
             public void onClick(View v) {
                 //在当前onclick方法中监听点击button的动作
-                System.out.println("我被点了耶");
+                /*System.out.println("我被点了耶");*/
+                Intent intent = getIntent();
+                intent.setClass(Login.this, News.class);
+                startActivity(intent);
             }
         });
 
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cancelButton.setText("");
+                sidEditText.setText("");
+                passEditText.setText("");
             }
         });
 
