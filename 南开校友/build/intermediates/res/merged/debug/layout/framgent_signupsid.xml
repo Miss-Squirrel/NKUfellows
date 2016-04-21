@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="学号"
+        android:textSize="25sp"
+        android:id="@+id/TextView_SignUp1_Sid"
+        android:layout_marginTop="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="8"
+        android:textColor="#000000"
+        android:id="@+id/EditText_SignUp1_Sid"
+        android:hint="@string/InputSid"
+        android:layout_alignTop="@+id/TextView_SignUp1_Sid"
+        android:layout_toRightOf="@+id/TextView_SignUp1_Sid"
+        android:layout_toEndOf="@+id/TextView_SignUp1_Sid"
+        android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
+
+
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="学院"
+        android:textSize="25sp"
+        android:id="@+id/TextView_SignUp1_School"
+        android:layout_below="@+id/TextView_SignUp1_Sid"
+        android:layout_marginTop="40dp"/>
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:hint="请输入学院"
+        android:id="@+id/autoCompleteTextView_SignUp1"
+        android:completionThreshold="2"
+        android:layout_alignTop="@+id/TextView_SignUp1_School"
+        android:layout_toRightOf="@+id/TextView_SignUp1_School"
+        android:layout_toEndOf="@+id/TextView_SignUp1_School"
+        android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="真实姓名"
+        android:textSize="25sp"
+        android:id="@+id/TextView_SignUp1_RealName"
+        android:layout_below="@+id/TextView_SignUp1_School"
+        android:layout_marginTop="40dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_SignUp1_RealName"
+        android:hint="请输入您的真实姓名"
+        android:textColor="#000000"
+        android:layout_alignTop="@+id/TextView_SignUp1_RealName"
+        android:layout_toRightOf="@+id/TextView_SignUp1_RealName"
+        android:layout_toEndOf="@+id/TextView_SignUp1_RealName" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="出生日期"
+        android:textSize="25sp"
+        android:id="@+id/TextView_SignUp1_BirthDate"
+        android:layout_below="@+id/TextView_SignUp1_RealName"
+        android:layout_marginTop="40dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="点击选择日期"
+        android:id="@+id/editText_SignUp1_BirthDate"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_alignBottom="@+id/TextView_SignUp1_BirthDate"
+        android:layout_alignLeft="@+id/autoCompleteTextView_SignUp1"
+        android:layout_alignStart="@+id/autoCompleteTextView_SignUp1" />
+
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:text="验证"
+        android:textColor="@color/white"
+        android:background="@color/NkuPurple"
+        android:id="@+id/button_SignUp1_Valid"
+        android:layout_below="@+id/editText_SignUp1_BirthDate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp" />
+
+
+</RelativeLayout>

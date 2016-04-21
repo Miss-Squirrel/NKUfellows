@@ -2,12 +2,17 @@ package nkubs.myapplication;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.widget.Toast;
 
 public class SignUp extends ActionBarActivity {
 
@@ -86,5 +91,8 @@ public class SignUp extends ActionBarActivity {
         }
 
     }
+
+
+
 }
 

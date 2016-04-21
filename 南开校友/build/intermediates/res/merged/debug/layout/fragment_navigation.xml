@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom">
+
+    <RadioGroup
+        android:id="@+id/radioGroup_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/radioButton_navigation_news"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="新闻活动"
+            android:gravity="center"
+            android:background="@drawable/radio_pressed"/>
+
+        <RadioButton
+            android:id="@+id/radioButton_navigation_fellows"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="我的校友"
+            android:gravity="center"
+            android:background="@drawable/radio_pressed"/>
+        <RadioButton
+            android:id="@+id/radioButton_navigation_donation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="捐赠母校"
+            android:gravity="center"
+            android:background="@drawable/radio_pressed"/>
+        <RadioButton
+            android:id="@+id/radioButton_navigation_association"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="校友会"
+            android:gravity="center"
+            android:background="@drawable/radio_pressed"/>
+        <RadioButton
+            android:id="@+id/radioButton_navigation_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:text="账号管理"
+            android:gravity="center"
+            android:background="@drawable/radio_pressed"/>
+    </RadioGroup>
+
+</LinearLayout>
