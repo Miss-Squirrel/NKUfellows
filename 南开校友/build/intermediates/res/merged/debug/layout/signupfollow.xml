@@ -108,7 +108,6 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:id="@+id/EditText_SignUpFollow_MobileNum"
         android:hint="请输入手机号码"
         android:layout_alignTop="@+id/TextView_SignUpFollow_MobileNum"

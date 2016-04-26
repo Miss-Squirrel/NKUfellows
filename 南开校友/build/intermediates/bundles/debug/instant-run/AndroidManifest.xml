@@ -114,6 +114,17 @@
 
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
+        <activity android:name="nkubs.myapplication.Fellows_Find_ResultAdd" >
+            <action android:name="nkubs.myapplication.Find_Result" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Fellows_FriendList_DetailInfo" >
+            <action android:name="nkubs.myapplication.Fellows_FriendList_DetailInfo" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Test" />
     </application>
 
 </manifest>

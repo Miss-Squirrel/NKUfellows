@@ -1,3 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="E:\NKUfellows\南开校友\libs\servlet-api.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="91942b0c53307a82d2da1ca3e45c043ec175a053">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\servlet-api_7b6fe3ed9449e19edcbe3d2b3c68d8190391414b.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0670fb9746ab739725a36fe68cc66a29501c7afd">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\instant-run-bootstrap_9e136da24a9aee4ce86194787faeaa1b9ae29eb7.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\internal_impl-22.2.0_3940cb3dc3eabb112cf337654e1b76cd0f10578b.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.1.0_a196499d32e3b0dbe1f0ec7ff76cb2d1af199afa.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.1.0_8dfdeba00b886c26798061361b35a853c6901833.jar" />
+    </item>
+    <item
+        jar="D:\Android\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\support-annotations-22.2.0_efeb5d800c4620a06328c63dbe992bbe3b3f2ee9.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-19.1.0_ca6caee6fb101c392dbb2825b17de254128b2540.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8675f4b619930dea61f4547c0592fb675aac2e4f">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\instant-run_d29849ebc3c89a0a0f710aed6c9010aad6789dbc.jar" />
+    </item>
+    <item
+        jar="E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="E:\NKUfellows\南开校友\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.2.0_891d62095f7fb57a2aef865effdb99db44f62a1a.jar" />
+    </item>
+
+</items>

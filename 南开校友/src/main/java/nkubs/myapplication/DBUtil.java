@@ -1,9 +1,20 @@
 package nkubs.myapplication;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
 import android.util.Log;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 public class DBUtil {
 
@@ -11,10 +22,12 @@ public class DBUtil {
     private ArrayList<String> brrayList = new ArrayList<String>();
     private ArrayList<String> resultist = new ArrayList<String>();
 
+
     private HttpConnSoap Soap = new HttpConnSoap();
 
-    public Boolean signUpCheck_sid(int _sid, String name,String school,String birthdate){
-        Log.i("信息","进入loginCheck方法");
+
+    public Boolean signUpCheck_sid(int _sid, String name, String school, String birthdate) {
+        Log.i("信息", "进入signUpCheck_sid方法");
         arrayList.clear();
         brrayList.clear();
         arrayList.add("_sid");
@@ -33,6 +46,191 @@ public class DBUtil {
     }
 
 
+    public Boolean insertUserInfo(int _sid, int gender, String city, String career, String mobile, String password, int pub) {
+        Log.i("信息", "进入insertUserInfo方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+
+        arrayList.add("_sid");
+        arrayList.add("gender");
+        arrayList.add("city");
+        arrayList.add("career");
+        arrayList.add("mobile");
+        arrayList.add("password");
+        arrayList.add("pub");
+
+        brrayList.add(Integer.toString(_sid));
+        brrayList.add(Integer.toString(gender));
+        brrayList.add(city);
+        brrayList.add(career);
+        brrayList.add(mobile);
+        brrayList.add(password);
+        brrayList.add(Integer.toString(pub));
+
+        resultist = Soap.GetWebService("insertUserInfo", arrayList, brrayList);
+        return (resultist.get(0).equals("true"));
+    }
 
 
+    public Boolean logInCheck(int _sid, String password) {
+        Log.i("信息", "进入loginCheck方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("_sid");
+        arrayList.add("password");
+        brrayList.add(Integer.toString(_sid));
+        brrayList.add(password);
+        resultist = Soap.GetWebService("logInCheck", arrayList, brrayList);
+        return (resultist.get(0).equals("true"));
+    }
+
+
+    public int find_mobile(String mobile) {
+        Log.i("信息", "进入find_mobile方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("mobile");
+        brrayList.add(mobile);
+        resultist = Soap.GetWebService("find_mobile", arrayList, brrayList);
+        return Integer.parseInt(resultist.get(0));
+    }
+
+
+    public HashMap<String, String> targetSidInfo(int targetSid) {
+        /*List<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();*/
+        HashMap<String, String> hashMap = new HashMap<String, String>();
+
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("targetSid");
+        brrayList.add(Integer.toString(targetSid));
+
+        //替换方法名啊！血淋淋的教训
+        resultist = Soap.GetWebService("targetSidInfo", arrayList, brrayList);
+       /* HashMap<String, String> tempHash = new HashMap<String, String>();
+        tempHash.put("Cno", "Cno");
+        tempHash.put("Cname", "Cname");
+        tempHash.put("Cnum", "Cnum");
+        list.add(tempHash);*/
+
+        for (int j = 0; j < resultist.size(); j += resultist.size()) {
+            hashMap.put("name", resultist.get(j).trim());
+            hashMap.put("gender", resultist.get(j + 1).trim());
+            hashMap.put("school", resultist.get(j + 2).trim());
+            hashMap.put("major", resultist.get(j + 3).trim());
+            hashMap.put("graduation", resultist.get(j + 4).trim());
+            hashMap.put("city", resultist.get(j + 5).trim());
+            hashMap.put("career", resultist.get(j + 6).trim());
+            hashMap.put("mobile", resultist.get(j + 7).trim());
+            Log.i("封装", resultist.get(j + 7));
+            /*list.add(hashMap);*/
+        }
+
+        return hashMap;
+    }
+
+
+    public Boolean createRelation(int _sid1, int _sid2) {
+        Log.i("信息", "进入发送好友请求方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("_sid1");
+        arrayList.add("_sid2");
+        brrayList.add(Integer.toString(_sid1));
+        brrayList.add(Integer.toString(_sid2));
+        resultist = Soap.GetWebService("createRelation", arrayList, brrayList);
+        return (resultist.get(0).equals("true"));
+    }
+
+
+    public List<Map<String, Object>> friendsList(int _sid) {
+
+        List<Map<String, Object>> datalist = new ArrayList<Map<String, Object>>();
+
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("_sid");
+        brrayList.add(Integer.toString(_sid));
+        resultist = Soap.GetWebService("friendsList", arrayList, brrayList);
+
+        //将网页返回值（ArrayList逐列装入Map中，用list封装）
+
+        for (int j = 0; j < resultist.size(); j += 4) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("friendSid", resultist.get(j));
+            map.put("name", resultist.get(j + 1));
+            map.put("city", resultist.get(j + 2));
+            map.put("career", resultist.get(j + 3));
+            datalist.add(map);
+        }
+        return datalist;
+    }
+
+
+    public List<Map<String, Object>> contactMatch(int _sid, List<String> list) {
+
+        List<Map<String, Object>> datalist = new ArrayList<Map<String, Object>>();
+
+        String contact1 = list.get(0);
+        String contact2 = list.get(1);
+        String contact3 = list.get(2);
+
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("_sid");
+        arrayList.add("contact1");
+        arrayList.add("contact2");
+        arrayList.add("contact3");
+        brrayList.add(Integer.toString(_sid));
+        brrayList.add(contact1);
+        brrayList.add(contact2);
+        brrayList.add(contact3);
+        resultist = Soap.GetWebService("contactMatch", arrayList, brrayList);
+
+        //将网页返回值（ArrayList逐列装入Map中，用list封装）
+
+        for (int j = 0; j < resultist.size(); j += 4) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("targetSid ", resultist.get(j));
+            map.put("name", resultist.get(j + 1));
+            map.put("city", resultist.get(j + 2));
+            map.put("career", resultist.get(j + 3));
+            datalist.add(map);
+        }
+
+        return datalist;
+
+    }
+
+
+    public Bitmap imageResource(int _Mid) {
+        Bitmap bm = null;
+
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+        arrayList.add("_Mid");
+        brrayList.add(Integer.toString(_Mid));
+        resultist = Soap.GetWebService("imageResource", arrayList, brrayList);
+
+        //将网页返回值（ArrayList逐列装入Map中，用list封装）
+
+        byte[] b = resultist.get(0).getBytes();
+        Log.i("获取byte", Arrays.toString(b));
+        Log.i("获取byte", Integer.toString(b.length));
+        if (b.length != 0) {
+            Log.i("获取byte", "转换！");
+            bm = BitmapFactory.decodeByteArray(b, 0, b.length);
+        }
+
+        return bm;
+
+    }
 }

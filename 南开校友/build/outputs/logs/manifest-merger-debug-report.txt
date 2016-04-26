@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:2:1-124:12
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:2:1-136:12
 	package
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml
@@ -30,7 +30,7 @@ ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:10:5-67
 	android:name
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:10:22-64
 application
-ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:14:5-122:19
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:14:5-134:19
 MERGED from [com.android.support:appcompat-v7:19.1.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:19:5-20
 MERGED from [com.android.support:support-v4:22.2.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
@@ -187,6 +187,26 @@ action#nkubs.myapplication.Find_Contacts
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:116:13-72
 	android:name
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:116:21-69
+activity#nkubs.myapplication.Fellows_Find_ResultAdd
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:120:9-123:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:120:19-57
+action#nkubs.myapplication.Find_Result
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:121:13-70
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:121:21-67
+activity#nkubs.myapplication.Fellows_FriendList_DetailInfo
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:125:9-128:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:125:19-64
+action#nkubs.myapplication.Fellows_FriendList_DetailInfo
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:126:13-88
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:126:21-85
+activity#nkubs.myapplication.Test
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:130:9-42
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:130:19-39
 uses-sdk
 INJECTED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:19.1.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:18:5-42

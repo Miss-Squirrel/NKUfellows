@@ -62,7 +62,7 @@ public class P_FileWrite extends Activity{
     private String readFile(){
         File f = Environment.getExternalStorageDirectory(); //获取存储卡地址
         File file = new File(f,"P_FileWrite");
-        String content = null;
+        String content ;
         FileInputStream fileInputStream = null;
         try {
             fileInputStream = new FileInputStream(file);
@@ -71,7 +71,7 @@ public class P_FileWrite extends Activity{
         }
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
-        int len = 0;
+        int len;
         try {
             while ((len = fileInputStream.read(buffer)) != -1){
                 byteArrayOutputStream.write(buffer,0,len);

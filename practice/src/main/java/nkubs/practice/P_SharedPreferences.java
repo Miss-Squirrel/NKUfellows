@@ -44,8 +44,8 @@ public class P_SharedPreferences extends Activity {
 
 
 
-        int id = preferences.getInt("学号",0);
-        boolean bl = preferences.getBoolean("是否显示用户名",false);
+        int id = preferences.getInt("_sid",0);
+        boolean bl = preferences.getBoolean("save",false);
         Log.i("学号", "" + id);
         if(bl){
             checkBox.setChecked(true);

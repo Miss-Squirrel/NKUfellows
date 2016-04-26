@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="姓名"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_name"
+            android:layout_marginTop="90dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditText_DetailInfo_name"
+            android:gravity="center"
+            android:hint="布局测试"
+            android:layout_alignTop="@+id/TextView_DetailInfo_name"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_name" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="性别"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_gender"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入性别"
+            android:gravity="center"
+            android:id="@+id/EditText_DetailInfo_gender"
+            android:layout_alignTop="@+id/TextView_DetailInfo_gender"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_gender" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="学院"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_school"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入性别"
+            android:gravity="center"
+            android:id="@+id/EditText_DetailInfo_school"
+            android:layout_alignTop="@+id/TextView_DetailInfo_school"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_school" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="专业"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_major"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入专业"
+            android:gravity="center"
+            android:id="@+id/EditText_DetailInfo_major"
+            android:layout_alignTop="@+id/TextView_DetailInfo_major"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_major" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="年级"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_graduation"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入年级"
+            android:gravity="center"
+            android:id="@+id/EditText_DetailInfo_graduation"
+            android:layout_alignTop="@+id/TextView_DetailInfo_graduation"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_graduation" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="城市"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_city"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入年级"
+            android:gravity="center"
+            android:id="@+id/EditText_DetailInfo_city"
+            android:layout_alignTop="@+id/TextView_DetailInfo_city"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_city" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="行业"
+            android:textSize="20sp"
+            android:id="@+id/TextView_DetailInfo_career"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入年级"
+            android:gravity="center"
+            android:id="@+id/EditText_DetailInfo_career"
+            android:layout_alignTop="@+id/TextView_DetailInfo_career"
+            android:layout_toEndOf="@+id/TextView_DetailInfo_career" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="手机"
+                android:textSize="20sp"
+                android:id="@+id/TextView_DetailInfo_mobile"
+                android:layout_marginTop="20dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入年级"
+                android:gravity="center"
+                android:id="@+id/EditText_DetailInfo_mobile"
+                android:layout_alignTop="@+id/TextView_DetailInfo_mobile"
+                android:layout_toEndOf="@+id/TextView_DetailInfo_mobile" />
+        </RelativeLayout>
+
+</LinearLayout>

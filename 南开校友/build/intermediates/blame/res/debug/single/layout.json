@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\donation.xml",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\donation.xml"
+    },
+    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
@@ -40,6 +44,10 @@
         "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\signuptab.xml"
     },
     {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\test.xml",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\test.xml"
+    },
+    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\framgent_signupsid.xml",
         "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\framgent_signupsid.xml"
     },
@@ -76,6 +84,10 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_activity_chooser_view_include.xml"
     },
     {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\fellows_find_resultadd.xml",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\fellows_find_resultadd.xml"
+    },
+    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
@@ -108,12 +120,12 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\fellows_find.xml",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\fellows_find.xml"
-    },
-    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\fellows_find.xml",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\fellows_find.xml"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
@@ -122,6 +134,10 @@
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\fellows_friendlist_detailinfo.xml",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\layout\\fellows_friendlist_detailinfo.xml"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\layout\\newslist.xml",

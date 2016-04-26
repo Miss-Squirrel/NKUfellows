@@ -3,17 +3,51 @@ package nkubs.myapplication;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Login extends Activity {
 
-    private EditText sidEditText;
-    private EditText passEditText;
-    private TextView textView;
+    private CheckBox checkBox;
+    static Boolean result;
+    private DBUtil dbUtil;
+
+
+    private android.os.Handler mhandler = new android.os.Handler() {
+        public void handleMessage(Message msg) {//此方法在ui线程运行
+            if(msg.what > 2) {
+                SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                if(checkBox.isChecked()) {
+                    Log.i("信息", "登录成功，用户名已保存！");
+                    editor.putBoolean("save", true);
+                    editor.apply();
+                }else{
+                    Log.i("信息", "登录成功，不保存用户名！");
+                    editor.putBoolean("save", false);
+                    editor.apply();
+                }
+                editor.putInt("_sid",msg.what);
+                editor.apply();
+                Intent intent = new Intent();
+                intent.setClass(Login.this, News.class);
+                startActivity(intent);
+            }else if (msg.what == 0){
+                Toast.makeText(Login.this, "账号或密码错误！", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(Login.this, "登录异常！", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +55,6 @@ public class Login extends Activity {
 
         //将java与layout文件进行关联，即将布局xml文件引入带activity当中
         setContentView(R.layout.activity_login);
-
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
         actionBar.setDisplayShowHomeEnabled(false); //移除icon
@@ -34,20 +67,49 @@ public class Login extends Activity {
          */
         Button loginButton = (Button) findViewById(R.id.button_login);
         final Button cancelButton = (Button) findViewById(R.id.button_cancel);
-        sidEditText = (EditText) findViewById(R.id.EditText_sid);
-        passEditText = (EditText) findViewById(R.id.EditText_password);
-        textView = (TextView) findViewById(R.id.textView_gosignup);
+        final EditText sidEditText = (EditText) findViewById(R.id.EditText_Login_sid);
+        final EditText passEditText = (EditText) findViewById(R.id.EditText_password);
+        final TextView textView = (TextView) findViewById(R.id.textView_gosignup);
+        dbUtil = new DBUtil();
+
+        SharedPreferences preferences = this.getSharedPreferences("Info",MODE_PRIVATE);
+        int id = preferences.getInt("_sid",0);
+        boolean bl = preferences.getBoolean("save",false);
+        checkBox = (CheckBox) findViewById(R.id.checkBox_login_whethersave);
+        EditText editText_sid = (EditText) findViewById(R.id.EditText_Login_sid);
+        Log.i("学号", "" + id);
+        if(bl){
+            checkBox.setChecked(true);
+            editText_sid.setText(id+"");
+        }else{
+            checkBox.setChecked(false);
+        }
 
 
         /*匿名内部类*/
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final int _sid = Integer.parseInt(sidEditText.getText().toString());
+                final String password = passEditText.getText().toString();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try{
+                            result = dbUtil.logInCheck(_sid, password);
+                            Log.i("信息", "" + result);
+                            if(result){
+                                mhandler.obtainMessage(_sid).sendToTarget();
+                            }else{
+                                mhandler.obtainMessage(0).sendToTarget();
+                            }
+                        }catch (Exception g){
+                            mhandler.obtainMessage(2).sendToTarget();
+                        }
+                    }
+                }).start();
                 //在当前onclick方法中监听点击button的动作
                 /*System.out.println("我被点了耶");*/
-                Intent intent = getIntent();
-                intent.setClass(Login.this, News.class);
-                startActivity(intent);
             }
         });
 
@@ -60,27 +122,22 @@ public class Login extends Activity {
         });
 
 
-
-     /* searchButton.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                //从getText方法提取的内容为Editable型，用toString转化为String类型，再用Integer.parseInt转为整型
-                int sid = Integer.parseInt(editText.getText().toString());
-                Log.i("传递", sid +"");
-                Intent intent = new Intent(Login.this, Search.class);
-                intent.putExtra("sid", sid);
-                startActivity(intent);
-            }
-        });*/
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(Login.this, SignUp.class);
-                startActivity(intent2);
+                Intent intent = getIntent();
+                intent.setClass(Login.this, SignUp.class);
+                startActivity(intent);
             }
         });
+
+    }
+}
+
+
+
+
+
 
 
         /* 外部类的实现 */
@@ -109,7 +166,6 @@ public class Login extends Activity {
          */
 
 
-    }
 
     /*@Override
     public void onClick(View v) {
@@ -118,7 +174,6 @@ public class Login extends Activity {
     */
 
 
-}
 
 
 /*class MyOnClickListener implements View.OnClickListener {

@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="8"
-        android:id="@+id/EditText_sid"
+        android:id="@+id/EditText_Login_sid"
         android:hint="@string/InputSid"
         android:layout_alignTop="@+id/TextView_sid"
         android:layout_toRightOf="@+id/TextView_sid"

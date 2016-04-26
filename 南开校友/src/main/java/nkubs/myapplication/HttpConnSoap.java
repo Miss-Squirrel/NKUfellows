@@ -74,13 +74,13 @@ public class HttpConnSoap {
             InputStream inStream = con.getInputStream();
 
             //data=parser(inStream);
-            System.out.print("11");
+            System.out.println("11");
             Values = inputStreamtovaluelist(inStream, methodName);
             System.out.println("Values.size()"+Values.size());
             return Values;
 
         } catch (Exception e) {
-            System.out.print("2221");
+            System.out.println("2221");
             return null;
         }
     }
@@ -91,13 +91,17 @@ public class HttpConnSoap {
         byte[] b = new byte[4096];
         ArrayList<String> Values = new ArrayList<String>();
         Values.clear();
+        int m =0;
 
         for (int n; (n = in.read(b)) != -1; ) {
             s1 = new String(b, 0, n);
             out.append(s1);
+            m++;
         }
 
-        System.out.println("out"+out);
+        System.out.println("循环次数"+ m);
+        System.out.println(out);
+        s1=out.toString(); //修改处！！！
         String[] s13 = s1.split("><");
         String ifString = MethodName + "Result";
         String TS = "";
@@ -106,13 +110,14 @@ public class HttpConnSoap {
         Boolean getValueBoolean = false;
         for (int i = 0; i < s13.length; i++) {
             TS = s13[i];
-            System.out.println("TS"+TS);
+            System.out.println(TS);
             int j, k, l;
             j = TS.indexOf(ifString);
             k = TS.lastIndexOf(ifString);
 
             if (j >= 0) {
                 System.out.println("j"+j);
+                System.out.println("k"+k);
                 if (getValueBoolean == false) {
                     getValueBoolean = true;
                 } else {
@@ -124,7 +129,6 @@ public class HttpConnSoap {
                     //System.out.println(TS);
                     l = ifString.length() + 1;
                     vs = TS.substring(j + l, k - 2);
-                    //System.out.println("fff"+vs);
                     Values.add(vs);
                     System.out.println("退出" + vs);
                     getValueBoolean = false;

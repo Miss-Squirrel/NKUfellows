@@ -33,7 +33,7 @@ public class P_ContentProvider extends Activity{
                 }
                 c1.close();
                 //根据ID查询联系人邮箱
-                Cursor c2 = contentResolver.query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, new String[]{ContactsContract.CommonDataKinds.Email.DATA, ContactsContract.CommonDataKinds.Email.TYPE}, ContactsContract.CommonDataKinds.Email.CONTACT_ID + "=" + id, null, null);
+               /* Cursor c2 = contentResolver.query(ContactsContract.CommonDataKinds.Email.CONTENT_URI, new String[]{ContactsContract.CommonDataKinds.Email.DATA, ContactsContract.CommonDataKinds.Email.TYPE}, ContactsContract.CommonDataKinds.Email.CONTACT_ID + "=" + id, null, null);
                if (c2 != null){
                    while (c2.moveToNext()){
                        int type = c2.getInt(c2.getColumnIndex(ContactsContract.CommonDataKinds.Email.TYPE));
@@ -42,7 +42,7 @@ public class P_ContentProvider extends Activity{
                        }
                    }
                }
-               c2.close();
+               c2.close();*/
             }
         }
         cursor.close();

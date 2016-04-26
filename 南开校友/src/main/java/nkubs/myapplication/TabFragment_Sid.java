@@ -41,21 +41,19 @@ public class TabFragment_Sid extends Fragment {
 
     private android.os.Handler mhandler = new android.os.Handler() {
         public void handleMessage(Message msg) {//此方法在ui线程运行
-            switch (msg.what) {
-                case 0:
-                    Log.i("信息", "验证成功");
-                    Intent intent = new Intent();
-                    intent.setClass(getActivity(), SignUpFollow.class);
-                    startActivity(intent);
-                    break;
-                case 1:
-                    Toast.makeText(getActivity(), "信息不匹配！", Toast.LENGTH_SHORT).show();
-                    break;
-                case 2:
-                    Toast.makeText(getActivity(), "验证失败！", Toast.LENGTH_SHORT).show();
+            if(msg.what > 2) {
+                Log.i("信息", "验证成功");
+                Intent intent = new Intent();
+                intent.putExtra("sid", msg.what);
+                intent.setClass(getActivity(), SignUpFollow.class);
+                startActivity(intent);
+            }else if (msg.what == 1){
+                Toast.makeText(getActivity(), "信息不匹配！", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(getActivity(), "验证失败！", Toast.LENGTH_SHORT).show();
             }
-        }
-    };
+            }
+        };
 
 
     @Override
@@ -86,33 +84,24 @@ public class TabFragment_Sid extends Fragment {
             public void onClick(View v) {
                /* Toast.makeText(getActivity(), "验证！", Toast.LENGTH_SHORT).show();*/
                 final String school = acTextView.getText().toString();
-                final int sid = Integer.parseInt(et_sid.getText().toString().trim());
+                final int _sid = Integer.parseInt(et_sid.getText().toString().trim());
                 final String name = et_name.getText().toString();
                 final String birthdate = et_date.getText().toString();
-                //Log.i("信息", sid + school + name + date);
-                new Thread(new Runnable() {
+                //Log.i("信息", _sid + school + name + date);
+                new Thread(
+                        new Runnable() {
                     public void run() {
                         try{
-                        result = dbUtil.signUpCheck_sid(sid, name, school, birthdate);
+                        result = dbUtil.signUpCheck_sid(_sid, name, school, birthdate);
                             Log.i("信息", "" + result);
                             if(result) {
-                            mhandler.obtainMessage(0).sendToTarget();
+                            mhandler.obtainMessage(_sid).sendToTarget();
                              } else{
                             mhandler.obtainMessage(1).sendToTarget();}
                         }catch (Exception f){
                             mhandler.obtainMessage(2).sendToTarget();}
                         }
                     }).start();
-
-                /*if(result){
-                    Log.i("信息","验证成功");
-                    Intent intent = new Intent();
-                    intent.setClass(getActivity(),SignUpFollow.class);
-                    startActivity(intent);
-                }else
-                {
-                    Toast.makeText(getActivity(),"验证失败！",Toast.LENGTH_SHORT).show();
-                }*/
             }
         });
 

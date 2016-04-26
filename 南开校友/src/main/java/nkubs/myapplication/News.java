@@ -1,38 +1,65 @@
 package nkubs.myapplication;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Administrator on 2016-04-18.
- */
-public class News extends FragmentActivity implements AdapterView.OnItemClickListener,AbsListView.OnScrollListener{
+
+
+public class News extends FragmentActivity implements AdapterView.OnItemClickListener{
+
 
     private ListView listView;
     private SimpleAdapter simpleAdapter;
     private List<Map<String,Object>> datalist;
     private ViewFlipper viewFlipper;
     //地址是整型
-    private int[] resID={R.drawable.img_2,R.drawable.img_3,R.drawable.img_6};
+    /* private int[] resID={R.drawable.img_2,R.drawable.img_3,R.drawable.img_6};*/
     private float starsX;
+    private Bitmap result;
+    private DBUtil dbUtil;
+
+
+    private android.os.Handler mhandler = new android.os.Handler() {
+        public void handleMessage(Message message) {//此方法在ui线程运行
+            Bitmap[] resBitmap = (Bitmap[]) message.obj;
+
+            if (message.what == 1) {
+                //遍历Bitmap[]，将Bitmap加载到imageView中，再将其加载到viewFlipper上
+                for (Bitmap aResBitmap : resBitmap) {
+                    ImageView imageView = new ImageView(News.this);
+                    imageView.setImageBitmap(aResBitmap);
+                    viewFlipper.addView(imageView);
+                    Log.i("主线程","加载imageView");
+                    //imageView.setImageResource(resID[i]); 这种方法显示的图片尺寸完全取决于原图片的尺寸
+                }
+            } else {
+                Toast.makeText(News.this, "标题图片加载失败！", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +80,31 @@ public class News extends FragmentActivity implements AdapterView.OnItemClickLis
         simpleAdapter = new SimpleAdapter(this,getDataList(),R.layout.newslist,new String[]{"pic","content"},new int[]{R.id.imageView_newslist,R.id.textView_newslist});
         listView.setAdapter(simpleAdapter);
         listView.setOnItemClickListener(this);
-        listView.setOnScrollListener(this);
 
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper_news);
         //以动态方式为ViewFlipper加入View
-        for (int i =0;i<resID.length;i++){
-            viewFlipper.addView(getImageView(i));
-        }
+        dbUtil = new DBUtil();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.i("子线程","进入获取图片资源子线程");
+                Bitmap[] resBitmap = new Bitmap[4];
+                try{
+                    for(int i = 0;i<4;i++){
+                        int _Mid = 101+i;
+                        System.out.println(_Mid);
+                        result = dbUtil.imageResource(_Mid);
+                        resBitmap[i]=result;
+
+                    }
+                    Log.i("子线程", "传递");
+                    //加上.sendToTarget().啊啊啊啊啊
+                    System.out.println(resBitmap);
+                    mhandler.obtainMessage(1,resBitmap).sendToTarget(); //message包含int what,和 Object 两个参数，还包含其他参数
+                }catch (Exception h){   //通过catch提高系统容错能力，调试时适当注释掉，以便查看错误日志
+                    mhandler.obtainMessage(2,null).sendToTarget();}
+            }
+        }).start();
 
 
     }
@@ -76,44 +121,18 @@ public class News extends FragmentActivity implements AdapterView.OnItemClickLis
         }
         return datalist;
     }
+
+
+
     @Override
     //position代表被点击对象所在listview位置，getItemAtPosition方法可以获得当前位置内容信息
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String text =listView.getItemAtPosition(position)+"";
         Toast.makeText(this, "position=" + position + text, Toast.LENGTH_SHORT).show();
     }
-    @Override
-    //scrollState为scrollState状态
-    public void onScrollStateChanged(AbsListView view, int scrollState) {
-        switch (scrollState) {
-            case SCROLL_STATE_FLING:
-                Log.i("main", "用户手指在离开屏幕之前，由于用力的滑了一下，视图仍依靠惯性继续滑动");
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("pic", R.drawable.nkuicon);
-                map.put("content", "火锅");
-                datalist.add(map);
-                //告诉UI数据源发生变化，重新刷新
-                simpleAdapter.notifyDataSetChanged();
-                break;
-            case SCROLL_STATE_IDLE:
-                Log.i("main", "视图已经停止滑动");
-                break;
-            case SCROLL_STATE_TOUCH_SCROLL:
-                Log.i("main","手指没有离开屏幕，正在滑动");
-                break;
-        }
-    }
-    @Override
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {}
 
 
 
-
-    private ImageView getImageView(int i){
-        ImageView imageView = new ImageView(this);
-        //imageView.setImageResource(resID[i]); 这种方法显示的图片尺寸完全取决于原图片的尺寸
-        imageView.setBackgroundResource(resID[i]); //这种可以自适应
-        return imageView;}
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction())
