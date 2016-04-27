@@ -17,7 +17,8 @@ public class HttpConnSoap {
 
         ArrayList<String> Values = new ArrayList<String>();
 
-        //ServerUrl是指webservice的url        //10.0.2.2是让android模拟器访问本地（PC）服务器，不能写成127.0.0.1
+        //ServerUrl是指webservice的url
+        // 10.0.2.2是让android模拟器访问本地（PC）服务器，不能写成127.0.0.1
         //11125是指端口号，即挂载到IIS上的时候开启的端口
         //Service1.asmx是指提供服务的页面
         String ServerUrl = "http://10.0.2.2:53102/Service1.asmx";

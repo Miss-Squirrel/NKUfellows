@@ -84,7 +84,7 @@ public class News extends FragmentActivity implements AdapterView.OnItemClickLis
         viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper_news);
         //以动态方式为ViewFlipper加入View
         dbUtil = new DBUtil();
-        new Thread(new Runnable() {
+     /*   new Thread(new Runnable() {
             @Override
             public void run() {
                 Log.i("子线程","进入获取图片资源子线程");
@@ -104,7 +104,7 @@ public class News extends FragmentActivity implements AdapterView.OnItemClickLis
                 }catch (Exception h){   //通过catch提高系统容错能力，调试时适当注释掉，以便查看错误日志
                     mhandler.obtainMessage(2,null).sendToTarget();}
             }
-        }).start();
+        }).start();*/
 
 
     }
