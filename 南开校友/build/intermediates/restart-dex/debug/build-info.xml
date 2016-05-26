@@ -4,26 +4,26 @@
     api-level="19"
     density="400dpi"
     format="7"
-    timestamp="28479938384380" >
+    timestamp="25672130678991" >
 
     <task
         name="javac"
-        duration="17464" />
+        duration="1656" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1030" />
+        duration="141" />
     <task
         name="verifier"
-        duration="1450" />
+        duration="4" />
 
     <artifact
         location="E:\NKUfellows\南开校友\build\outputs\apk\南开校友-debug.apk"
         type="MAIN" />
 
-    <build timestamp="28479938384380" >
+    <build timestamp="25672130678991" >
         <artifact
             location="E:\NKUfellows\南开校友\build\outputs\apk\南开校友-debug.apk"
             type="MAIN" />

@@ -19,7 +19,7 @@ public class Fellows_Find_Accurate extends Activity {
     private Button button;
     private DBUtil dbutil;
     static int result;
-    private Boolean way;
+    private Boolean way = true;
 
 
     private android.os.Handler mhandler = new android.os.Handler() {
@@ -72,12 +72,17 @@ public class Fellows_Find_Accurate extends Activity {
             @Override
             public void onClick(View view) {
                 new Thread(new Runnable() {
-                    String mobile = editText.getText().toString();
+                    String text = editText.getText().toString();
                     @Override
                     public void run() {
                         try {
                             if (way) {
-                                result = dbutil.find_mobile(mobile);
+                                result = dbutil.find_mobile(text);
+                                Log.i("信息", "" + result);
+                                mhandler.obtainMessage(result).sendToTarget();
+                            }
+                            else{
+                                result = dbutil.find_name(text);
                                 Log.i("信息", "" + result);
                                 mhandler.obtainMessage(result).sendToTarget();
                             }

@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/EditText_DetailInfo_name"
             android:gravity="center"
-            android:hint="布局测试"
             android:layout_alignTop="@+id/TextView_DetailInfo_name"
             android:layout_toEndOf="@+id/TextView_DetailInfo_name" />
     </RelativeLayout>
@@ -40,7 +39,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入性别"
             android:gravity="center"
             android:id="@+id/EditText_DetailInfo_gender"
             android:layout_alignTop="@+id/TextView_DetailInfo_gender"
@@ -61,7 +59,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入性别"
             android:gravity="center"
             android:id="@+id/EditText_DetailInfo_school"
             android:layout_alignTop="@+id/TextView_DetailInfo_school"
@@ -82,7 +79,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入专业"
             android:gravity="center"
             android:id="@+id/EditText_DetailInfo_major"
             android:layout_alignTop="@+id/TextView_DetailInfo_major"
@@ -103,7 +99,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入年级"
             android:gravity="center"
             android:id="@+id/EditText_DetailInfo_graduation"
             android:layout_alignTop="@+id/TextView_DetailInfo_graduation"
@@ -124,7 +119,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入年级"
             android:gravity="center"
             android:id="@+id/EditText_DetailInfo_city"
             android:layout_alignTop="@+id/TextView_DetailInfo_city"
@@ -146,7 +140,6 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请输入年级"
             android:gravity="center"
             android:id="@+id/EditText_DetailInfo_career"
             android:layout_alignTop="@+id/TextView_DetailInfo_career"
@@ -168,11 +161,21 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="请输入年级"
                 android:gravity="center"
                 android:id="@+id/EditText_DetailInfo_mobile"
                 android:layout_alignTop="@+id/TextView_DetailInfo_mobile"
                 android:layout_toEndOf="@+id/TextView_DetailInfo_mobile" />
         </RelativeLayout>
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="发送信息"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:background="@color/NkuPurple"
+        android:clickable="true"
+        android:id="@+id/button_DetailInfo_newMsg"/>
 
 </LinearLayout>

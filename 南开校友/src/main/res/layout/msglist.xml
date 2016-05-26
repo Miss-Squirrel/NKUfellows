@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView_MsgList_name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="姓名"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:paddingLeft="0dp"
+        android:layout_weight="4"/>
+
+    <TextView
+        android:id="@+id/textView_MsgList_theme"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="主题"
+        android:textSize="20sp"
+        android:gravity="center|left"
+        android:paddingLeft="40dp"
+        android:layout_weight="2"/>
+
+    <TextView
+        android:id="@+id/textView_MsgList_date"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="日期"
+        android:textSize="15sp"
+        android:gravity="center|left"
+        android:layout_weight="4"/>
+
+</LinearLayout>

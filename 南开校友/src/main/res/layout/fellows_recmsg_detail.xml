@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="发件人："
+            android:textSize="20sp"
+            android:gravity="bottom"
+            android:id="@+id/TextView_RecMsg_Detail_senSid"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_RecMsg_Detail_senSid"
+            android:layout_alignTop="@+id/TextView_RecMsg_Detail_senSid"
+            android:layout_toEndOf="@+id/TextView_RecMsg_Detail_senSid"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="主题："
+            android:textSize="20sp"
+            android:gravity="bottom"
+            android:id="@+id/TextView_RecMsg_Detail_theme" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_RecMsg_Detail_theme"
+            android:layout_alignTop="@+id/TextView_RecMsg_Detail_theme"
+            android:layout_toEndOf="@+id/TextView_RecMsg_Detail_theme" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="日期："
+            android:textSize="20sp"
+            android:gravity="bottom"
+            android:id="@+id/TextView_RecMsg_Detail_date" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_RecMsg_Detail_date"
+            android:layout_alignTop="@+id/TextView_RecMsg_Detail_date"
+            android:layout_toEndOf="@+id/TextView_RecMsg_Detail_date" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="top"
+        android:id="@+id/EditText_RecMsg_Detail_content"
+        android:background="#f3f3f3"
+        android:hint="消息内容"
+        />
+
+
+
+</LinearLayout>

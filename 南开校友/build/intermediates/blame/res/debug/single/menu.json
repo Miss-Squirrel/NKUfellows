@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\menu\\menu_newmsg.xml",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\menu\\menu_newmsg.xml"
+    },
+    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
         "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\menu\\menu_main.xml"
     }

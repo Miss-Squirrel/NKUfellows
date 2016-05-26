@@ -5,6 +5,38 @@
     android:layout_height="match_parent"
     android:gravity="bottom">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未读信息"
+        android:id="@+id/button_fellows_unrMsg"
+        android:layout_marginBottom="20dp"
+        android:background="#f3f3f3"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="写信息"
+        android:id="@+id/button_fellows_newMsg"
+        android:layout_marginBottom="20dp"
+        android:background="#f3f3f3" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="收件箱"
+        android:id="@+id/button_fellows_recMsg"
+        android:layout_marginBottom="20dp"
+        android:background="#f3f3f3"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发件箱"
+        android:id="@+id/button_fellows_senMsg"
+        android:layout_marginBottom="390dp"
+        android:background="#f3f3f3"/>
+
 
     <fragment
         android:layout_width="match_parent"

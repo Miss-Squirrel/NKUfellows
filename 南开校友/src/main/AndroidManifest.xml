@@ -92,7 +92,7 @@
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
 
-        <activity android:name=".Fellows_Friends" >
+        <activity android:name=".Fellows_FriendList" >
             <action android:name="nkubs.myapplication.FriendsList" />
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
@@ -107,7 +107,7 @@
             <category android:name="android.intent.category.DEFAULT" />
         </activity>
 
-        <activity android:name=".Fellows_Find_Condition" >
+        <activity android:name=".Fellows_Find_Condition_getInfo" >
         <action android:name="nkubs.myapplication.Find_Condition" />
         <category android:name="android.intent.category.DEFAULT" />
         </activity>
@@ -128,6 +128,77 @@
         </activity>
 
         <activity android:name=".Test" />
+
+        <activity android:name=".Fellows_NewMsg">
+            <action android:name="nkubs.myapplication.Fellows_NewMsg" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+
+        <activity android:name=".Fellows_RecMsg">
+            <action android:name="nkubs.myapplication.Fellows_RecMsg" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name=".Fellows_RecMsg_Detail">
+            <action android:name="nkubs.myapplication.Fellows_RecMsg_Detail" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name=".Fellows_SenMsg">
+            <action android:name="nkubs.myapplication.Fellows_SenMsg" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="Fellows_SenMsg_Detail">
+            <action android:name="nkubs.myapplication.Fellows_SenMsg_Detail" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Fellows_Find_Condition_list">
+            <action android:name="nkubs.myapplication.Fellows_Find_Condition_list" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Fellows_unrMsg">
+            <action android:name="nkubs.myapplication.Fellows_unrMsg" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Fellows_Request">
+            <action android:name="nkubs.myapplication.Fellows_Request" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Fellows_Request_Dealing">
+            <action android:name="nkubs.myapplication.Fellows_Request_Dealing" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Mine_MyInvicode">
+            <action android:name="nkubs.myapplication.Mine_MyInvicode" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Mine_PwChange">
+            <action android:name="nkubs.myapplication.Mine_PwChange" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Mine_InfoChange">
+            <action android:name="nkubs.myapplication.Mine_InfoChange" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+        <activity android:name="nkubs.myapplication.Mine_PwChange_Submit">
+            <action android:name="nkubs.myapplication.Mine_PwChange_Submit" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+
+
+
+
+
 
 
 

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import java.util.HashMap;
@@ -24,6 +26,8 @@ public class Fellows_FriendList_DetailInfo extends Activity {
     private EditText et_city;
     private EditText et_career;
     private EditText et_mobile;
+    private Button bt_newMsg;
+    private String name;
 
 
     private android.os.Handler mhandler = new android.os.Handler() {
@@ -44,11 +48,15 @@ public class Fellows_FriendList_DetailInfo extends Activity {
                 et_city.setText(hashMap.get("city"));
                 et_career.setText(hashMap.get("career"));
                 et_mobile.setText(hashMap.get("mobile"));
+                name = hashMap.get("name");
             }else if(message.what == 2){
                 Toast.makeText(Fellows_FriendList_DetailInfo.this, "数据输出异常！", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(Fellows_FriendList_DetailInfo.this, "未知错误！", Toast.LENGTH_SHORT).show();
             }
+
+
+
         }
     };
 
@@ -67,9 +75,10 @@ public class Fellows_FriendList_DetailInfo extends Activity {
         et_name = (EditText) findViewById(R.id.EditText_DetailInfo_name);
         et_school = (EditText) findViewById(R.id.EditText_DetailInfo_school);
         et_mobile = (EditText) findViewById(R.id.EditText_DetailInfo_mobile);
+        bt_newMsg = (Button) findViewById(R.id.button_DetailInfo_newMsg);
 
 
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         friendSid = intent.getIntExtra("friendSid",0);
         Log.i("接收", friendSid+"");
 
@@ -91,6 +100,18 @@ public class Fellows_FriendList_DetailInfo extends Activity {
                     mhandler.obtainMessage(2,null).sendToTarget();}
             }
         }).start();
+
+
+        bt_newMsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("recSid", friendSid);
+                intent.putExtra("name", name);
+                intent.setClass(Fellows_FriendList_DetailInfo.this, Fellows_NewMsg.class);
+                startActivity(intent);
+            }
+        });
 
 
 

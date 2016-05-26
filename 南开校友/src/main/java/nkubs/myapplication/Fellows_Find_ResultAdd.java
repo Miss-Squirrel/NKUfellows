@@ -59,12 +59,19 @@ public class Fellows_Find_ResultAdd extends Activity {
                 intent.setClass(Fellows_Find_ResultAdd.this, Fellows_Find.class);
                 startActivity(intent);
             } else if (message.what == 4) {
-                Toast.makeText(Fellows_Find_ResultAdd.this, "发送好友请求失败！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Fellows_Find_ResultAdd.this, "重复提交好友请求！", Toast.LENGTH_SHORT).show();
             } else if (message.what == 5){
                 Toast.makeText(Fellows_Find_ResultAdd.this, "您不可以给自己发送添加好友请求！", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(Fellows_Find_ResultAdd.this, "未知错误！", Toast.LENGTH_SHORT).show();
             }
+            et_name.setEnabled(false);
+            et_gender.setEnabled(false);
+            et_school.setEnabled(false);
+            et_major.setEnabled(false);
+            et_graduation.setEnabled(false);
+            et_city.setEnabled(false);
+            et_career.setEnabled(false);
         }
     };
 

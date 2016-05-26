@@ -17,7 +17,7 @@ import java.util.Map;
 
 
 
-public class Fellows_Friends extends Activity implements AdapterView.OnItemClickListener{
+public class Fellows_FriendList extends Activity implements AdapterView.OnItemClickListener{
 
 
     private ListView listView;
@@ -37,11 +37,11 @@ public class Fellows_Friends extends Activity implements AdapterView.OnItemClick
         每一个map中的键必须包含所有在from中所指定的键），resource列表项的布局文件，from（map中的键名），
         to 绑定数据视图中的ID，与from组成对应关系)*/
                 datalist = (List<Map<String,Object>>)message.obj;
-                simpleAdapter = new SimpleAdapter(Fellows_Friends.this,datalist,R.layout.friendslist,new String[]{"name","city","career"},new int[]{R.id.textView_FriendsList_name,R.id.textView_FriendsList_city,R.id.textView_FriendsList_career});
+                simpleAdapter = new SimpleAdapter(Fellows_FriendList.this,datalist,R.layout.friendslist,new String[]{"name","city","career"},new int[]{R.id.textView_FriendsList_name,R.id.textView_FriendsList_city,R.id.textView_FriendsList_career});
                 listView.setAdapter(simpleAdapter);
-                listView.setOnItemClickListener(Fellows_Friends.this);
+                listView.setOnItemClickListener(Fellows_FriendList.this);
             }else{
-                Toast.makeText(Fellows_Friends.this, "获取好友列表失败！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Fellows_FriendList.this, "获取好友列表失败！", Toast.LENGTH_SHORT).show();
             }
         }
     };
@@ -88,7 +88,7 @@ public class Fellows_Friends extends Activity implements AdapterView.OnItemClick
         int friendSid = Integer.parseInt(datalist.get(position).get("friendSid").toString().trim());
         Intent intent = new Intent();
         intent.putExtra("friendSid", friendSid);
-        intent.setClass(Fellows_Friends.this, Fellows_FriendList_DetailInfo.class);
+        intent.setClass(Fellows_FriendList.this, Fellows_FriendList_DetailInfo.class);
         startActivity(intent);
        /* String text =listView.getItemAtPosition(position)+"";
         Toast.makeText(this, "position=" + position + text, Toast.LENGTH_SHORT).show();*/

@@ -56,67 +56,67 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="所在城市"
-        android:textSize="27sp"
-        android:id="@+id/TextView_SignUpFollow_City"
-        android:layout_marginTop="140dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/EditText_SignUpFollow_City"
-        android:hint="请输入您目前所在城市"
-        android:layout_alignTop="@+id/TextView_SignUpFollow_City"
-        android:layout_toRightOf="@+id/TextView_SignUpFollow_City"
-        android:layout_toEndOf="@+id/TextView_SignUpFollow_City"
-        android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="所在城市"
+     android:textSize="27sp"
+     android:id="@+id/TextView_SignUpFollow_City"
+     android:layout_marginTop="140dp"
+     android:layout_alignParentTop="true"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentStart="true" />
+ <EditText
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/EditText_SignUpFollow_City"
+     android:hint="请输入您目前所在城市"
+     android:layout_alignTop="@+id/TextView_SignUpFollow_City"
+     android:layout_toRightOf="@+id/TextView_SignUpFollow_City"
+     android:layout_toEndOf="@+id/TextView_SignUpFollow_City"
+     android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="行业领域"
-        android:textSize="27sp"
-        android:id="@+id/TextView_SignUpFollow_Career"
-        android:layout_below="@+id/TextView_SignUpFollow_City"
-        android:layout_marginTop="40dp"/>
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/Spinner_SignUpFollow_Career"
-        android:layout_alignTop="@+id/TextView_SignUpFollow_Career"
-        android:layout_toRightOf="@+id/TextView_SignUpFollow_Career"
-        android:layout_toEndOf="@+id/TextView_SignUpFollow_Career"
-        android:layout_above="@+id/TextView_SignUpFollow_MobileNum"
-        android:layout_alignBottom="@+id/TextView_SignUpFollow_Career"/>
+ <TextView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="行业领域"
+     android:textSize="27sp"
+     android:id="@+id/TextView_SignUpFollow_Career"
+     android:layout_below="@+id/TextView_SignUpFollow_City"
+     android:layout_marginTop="40dp"/>
+ <Spinner
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/Spinner_SignUpFollow_Career"
+     android:layout_alignTop="@+id/TextView_SignUpFollow_Career"
+     android:layout_toRightOf="@+id/TextView_SignUpFollow_Career"
+     android:layout_toEndOf="@+id/TextView_SignUpFollow_Career"
+     android:layout_above="@+id/TextView_SignUpFollow_MobileNum"
+     android:layout_alignBottom="@+id/TextView_SignUpFollow_Career"/>
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="手机号码"
-        android:textSize="27sp"
-        android:id="@+id/TextView_SignUpFollow_MobileNum"
-        android:layout_below="@+id/TextView_SignUpFollow_Career"
-        android:layout_marginTop="40dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/EditText_SignUpFollow_MobileNum"
-        android:hint="请输入手机号码"
-        android:layout_alignTop="@+id/TextView_SignUpFollow_MobileNum"
-        android:layout_toRightOf="@+id/TextView_SignUpFollow_MobileNum"
-        android:layout_toEndOf="@+id/TextView_SignUpFollow_MobileNum" />
+ <TextView
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="手机号码"
+     android:textSize="27sp"
+     android:id="@+id/TextView_SignUpFollow_MobileNum"
+     android:layout_below="@+id/TextView_SignUpFollow_Career"
+     android:layout_marginTop="40dp"/>
+ <EditText
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/EditText_SignUpFollow_MobileNum"
+     android:hint="请输入手机号码"
+     android:layout_alignTop="@+id/TextView_SignUpFollow_MobileNum"
+     android:layout_toRightOf="@+id/TextView_SignUpFollow_MobileNum"
+     android:layout_toEndOf="@+id/TextView_SignUpFollow_MobileNum" />
 
 
 
-    <TextView
+ <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="密码"

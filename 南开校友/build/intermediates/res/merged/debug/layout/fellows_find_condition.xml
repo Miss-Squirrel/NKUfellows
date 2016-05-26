@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="学院"
+            android:textSize="20sp"
+            android:id="@+id/TextView_find_condition_school"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_find_condition_school"
+            android:layout_alignTop="@+id/TextView_find_condition_school"
+            android:layout_toEndOf="@+id/TextView_find_condition_school" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="年级"
+            android:textSize="20sp"
+            android:id="@+id/TextView_find_condition_graduation"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_find_condition_graduation"
+            android:layout_alignTop="@+id/TextView_find_condition_graduation"
+            android:layout_toEndOf="@+id/TextView_find_condition_graduation" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="城市"
+            android:textSize="20sp"
+            android:id="@+id/TextView_find_condition_city"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_find_condition_city"
+            android:layout_alignTop="@+id/TextView_find_condition_city"
+            android:layout_toEndOf="@+id/TextView_find_condition_city" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="行业"
+            android:textSize="20sp"
+            android:id="@+id/TextView_find_condition_career"
+            android:layout_marginTop="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/EditText_find_condition_career"
+            android:layout_alignTop="@+id/TextView_find_condition_career"
+            android:layout_toEndOf="@+id/TextView_find_condition_career" />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="查    找"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        android:background="@color/NkuPurple"
+        android:id="@+id/button_find_condition_find"
+        android:clickable="true"/>
+
+
 
 </LinearLayout>

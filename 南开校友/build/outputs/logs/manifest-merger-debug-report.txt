@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:2:1-136:12
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:2:1-207:12
 	package
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:4:5-34
 		INJECTED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml
@@ -30,7 +30,7 @@ ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:10:5-67
 	android:name
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:10:22-64
 application
-ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:14:5-134:19
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:14:5-205:19
 MERGED from [com.android.support:appcompat-v7:19.1.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:19:5-20
 MERGED from [com.android.support:support-v4:22.2.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
@@ -147,10 +147,10 @@ action#nkubs.myapplication.Mine
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:91:13-63
 	android:name
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:91:21-60
-activity#nkubs.myapplication.Fellows_Friends
+activity#nkubs.myapplication.Fellows_FriendList
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:95:9-98:20
 	android:name
-		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:95:19-50
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:95:19-53
 action#nkubs.myapplication.FriendsList
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:96:13-70
 	android:name
@@ -171,10 +171,10 @@ action#nkubs.myapplication.Find_Accurate
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:106:13-72
 	android:name
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:106:21-69
-activity#nkubs.myapplication.Fellows_Find_Condition
+activity#nkubs.myapplication.Fellows_Find_Condition_getInfo
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:110:9-113:20
 	android:name
-		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:110:19-57
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:110:19-65
 action#nkubs.myapplication.Find_Condition
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:111:9-69
 	android:name
@@ -207,6 +207,110 @@ activity#nkubs.myapplication.Test
 ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:130:9-42
 	android:name
 		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:130:19-39
+activity#nkubs.myapplication.Fellows_NewMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:132:9-135:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:132:19-49
+action#nkubs.myapplication.Fellows_NewMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:133:13-73
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:133:21-70
+activity#nkubs.myapplication.Fellows_RecMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:138:9-141:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:138:19-49
+action#nkubs.myapplication.Fellows_RecMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:139:13-73
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:139:21-70
+activity#nkubs.myapplication.Fellows_RecMsg_Detail
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:143:9-146:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:143:19-56
+action#nkubs.myapplication.Fellows_RecMsg_Detail
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:144:13-80
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:144:21-77
+activity#nkubs.myapplication.Fellows_SenMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:148:9-151:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:148:19-49
+action#nkubs.myapplication.Fellows_SenMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:149:13-73
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:149:21-70
+activity#nkubs.myapplication.Fellows_SenMsg_Detail
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:153:9-156:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:153:19-55
+action#nkubs.myapplication.Fellows_SenMsg_Detail
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:154:13-80
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:154:21-77
+activity#nkubs.myapplication.Fellows_Find_Condition_list
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:158:9-161:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:158:19-81
+action#nkubs.myapplication.Fellows_Find_Condition_list
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:159:13-86
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:159:21-83
+activity#nkubs.myapplication.Fellows_unrMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:163:9-166:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:163:19-68
+action#nkubs.myapplication.Fellows_unrMsg
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:164:13-73
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:164:21-70
+activity#nkubs.myapplication.Fellows_Request
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:168:9-171:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:168:19-69
+action#nkubs.myapplication.Fellows_Request
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:169:13-74
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:169:21-71
+activity#nkubs.myapplication.Fellows_Request_Dealing
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:173:9-176:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:173:19-77
+action#nkubs.myapplication.Fellows_Request_Dealing
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:174:13-82
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:174:21-79
+activity#nkubs.myapplication.Mine_MyInvicode
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:178:9-181:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:178:19-69
+action#nkubs.myapplication.Mine_MyInvicode
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:179:13-74
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:179:21-71
+activity#nkubs.myapplication.Mine_PwChange
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:183:9-186:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:183:19-67
+action#nkubs.myapplication.Mine_PwChange
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:184:13-72
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:184:21-69
+activity#nkubs.myapplication.Mine_InfoChange
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:188:9-191:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:188:19-69
+action#nkubs.myapplication.Mine_InfoChange
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:189:13-74
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:189:21-71
+activity#nkubs.myapplication.Mine_PwChange_Submit
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:193:9-196:20
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:193:19-74
+action#nkubs.myapplication.Mine_PwChange_Submit
+ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:194:13-79
+	android:name
+		ADDED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml:194:21-76
 uses-sdk
 INJECTED from E:\NKUfellows\南开校友\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:19.1.0] E:\NKUfellows\南开校友\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\AndroidManifest.xml:18:5-42

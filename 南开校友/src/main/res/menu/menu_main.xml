@@ -9,12 +9,16 @@
         NKUfellows:showAsAction="always"/>
         <!--android:icon="@drawable/icon_facebook"-->
 
+
     <item
         android:id ="@+id/action_add"
         android:orderInCategory="100"
         android:title="添加好友"
         NKUfellows:showAsAction="always" />
-        <!--android:icon="@drawable/icon_skype"-->
+    <!--android:icon="@drawable/icon_skype"-->
+
+
+
 
 </menu>
 

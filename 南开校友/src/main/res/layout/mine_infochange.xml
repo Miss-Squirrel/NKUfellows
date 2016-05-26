@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="所在城市"
+        android:textSize="25sp"
+        android:id="@+id/TextView_Mine_City"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_Mine_City"
+        android:hint="请输入您目前所在城市"
+        android:layout_alignTop="@+id/TextView_Mine_City"
+        android:layout_toRightOf="@+id/TextView_Mine_City"
+        android:layout_toEndOf="@+id/TextView_Mine_City" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="行业领域"
+        android:textSize="25sp"
+        android:id="@+id/TextView_Mine_Career"
+        android:layout_below="@+id/TextView_Mine_City"
+        android:layout_marginTop="40dp"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Spinner_Mine_Career"
+        android:layout_alignTop="@+id/TextView_Mine_Career"
+        android:layout_toRightOf="@+id/TextView_Mine_Career"
+        android:layout_toEndOf="@+id/TextView_Mine_Career"
+        android:layout_above="@+id/TextView_Mine_MobileNum"
+        android:layout_alignBottom="@+id/TextView_Mine_Career"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机号码"
+        android:textSize="25sp"
+        android:id="@+id/TextView_Mine_MobileNum"
+        android:layout_below="@+id/TextView_Mine_Career"
+        android:layout_marginTop="40dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/EditText_Mine_MobileNum"
+        android:hint="请输入手机号码"
+        android:layout_alignTop="@+id/EditText_Mine_MobileNum"
+        android:layout_toRightOf="@+id/EditText_Mine_MobileNum"
+        android:layout_toEndOf="@+id/EditText_Mine_MobileNum" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="是否公开手机号"
+        android:id="@+id/checkBox_Mine"
+        android:checked="true"
+        android:layout_below="@+id/EditText_Mine_MobileNum"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+
+    <Button
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:text="修改"
+        android:textColor="@color/white"
+        android:id="@+id/button_Mine_modify"
+        android:background="@color/NkuPurple"
+        android:onClick="onClick"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+
+
+</LinearLayout>

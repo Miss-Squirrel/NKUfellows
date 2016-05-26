@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学号"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUp1_Sid"
+        android:layout_marginTop="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="8"
+        android:id="@+id/EditText_SignUp1_Sid"
+        android:hint="@string/InputSid"
+        android:layout_alignTop="@+id/TextView_SignUp1_Sid"
+        android:layout_toRightOf="@+id/TextView_SignUp1_Sid"
+        android:layout_toEndOf="@+id/TextView_SignUp1_Sid"
+        android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="真实姓名"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUp1_RealName"
+        android:layout_below="@+id/TextView_SignUp1_Sid"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_SignUp1_RealName"
+        android:hint="请输入您的真实姓名"
+        android:layout_alignTop="@+id/TextView_SignUp1_RealName"
+        android:layout_toRightOf="@+id/TextView_SignUp1_RealName"
+        android:layout_toEndOf="@+id/TextView_SignUp1_RealName"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机号码"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUp1_MobileNum"
+        android:layout_below="@+id/TextView_SignUp1_RealName"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_SignUp1_MobileNum"
+        android:hint="请输入密码"
+        android:layout_alignTop="@+id/TextView_SignUp1_MobileNum"
+        android:layout_toRightOf="@+id/TextView_SignUp1_MobileNum"
+        android:layout_toEndOf="@+id/TextView_SignUp1_MobileNum" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码"
+        android:textSize="27sp"
+        android:id="@+id/TextView_SignUp1_mobileNum"
+        android:layout_below="@+id/TextView_SignUp1_MobileNum"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/EditText_SignUp1_mobileNum"
+        android:hint="请输入密码"
+        android:layout_alignTop="@+id/TextView_SignUp1_mobileNum"
+        android:layout_toRightOf="@+id/TextView_SignUp1_mobileNum"
+        android:layout_toEndOf="@+id/TextView_SignUp1_mobileNum"
+        android:layout_alignLeft="@+id/EditText_SignUp1_RealName"/>
+
+
+</RelativeLayout>

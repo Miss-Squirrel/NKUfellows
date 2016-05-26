@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="个人信息修改"
+        android:id="@+id/button_Mine_InfoChange"
+        android:layout_marginBottom="20dp"
+        android:background="#f3f3f3"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改密码"
+        android:id="@+id/button_Mine_PwChange"
+        android:layout_marginBottom="20dp"
+        android:background="#f3f3f3" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我的邀请码"
+        android:id="@+id/button_Mine_MyInvicode"
+        android:layout_marginBottom="430dp"
+        android:background="#f3f3f3"/>
+
+
+
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="nkubs.myapplication.Fragment_Navigation"
+        tools:layout="@layout/fragment_navigation" />
+
+
+
+</LinearLayout>

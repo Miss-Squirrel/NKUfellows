@@ -22,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:id="@+id/RadioButton_Find_Accurate_mobile"/>
+            android:id="@+id/RadioButton_Find_Accurate_mobile"
+            android:checked="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
-            android:id="@+id/RadioButton_Find_Accurate_name"/>
+            android:id="@+id/RadioButton_Find_Accurate_name" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

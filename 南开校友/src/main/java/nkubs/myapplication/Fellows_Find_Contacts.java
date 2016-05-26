@@ -99,7 +99,12 @@ public class Fellows_Find_Contacts extends Activity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        int targetSid = Integer.parseInt(datalist.get(i).get("targetSid").toString().trim());
+       /* System.out.println(datalist);
+        System.out.println(datalist.get(i).get("career"));
+        System.out.println(datalist.get(i).get("city"));
+        System.out.println(datalist.get(i).get("name"));
+        System.out.println(datalist.get(i).get("target_sid"));*/
+        int targetSid = Integer.parseInt(datalist.get(i).get("target_sid").toString().trim());
         SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("targetSid",targetSid);
@@ -108,4 +113,8 @@ public class Fellows_Find_Contacts extends Activity implements AdapterView.OnIte
         intent.setClass(Fellows_Find_Contacts.this, Fellows_Find_ResultAdd.class);
         startActivity(intent);
     }
+
+
+
+
 }
