@@ -16,6 +16,7 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/nkuicon"
         android:label=" 南开校友"
         android:supportsRtl="true"
         android:theme="@style/NKU_theme" >
@@ -36,15 +37,6 @@
         <activity android:name="nkubs.myapplication.Login" >
             <intent-filter>
                 <action android:name="nkubs.myapplication.Login" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="nkubs.myapplication.Search"
-            android:label="Search" >
-            <intent-filter>
-                <action android:name="nkubs.myapplication.Search" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -186,6 +178,31 @@
         </activity>
         <activity android:name="nkubs.myapplication.Mine_PwChange_Submit" >
             <action android:name="nkubs.myapplication.Mine_PwChange_Submit" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.News_detail" >
+            <action android:name="nkubs.myapplication.News_detail" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Association_Data_1_City" >
+            <action android:name="nkubs.myapplication.Association_Data_1_City" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Association_Data_2_Career" >
+            <action android:name="nkubs.myapplication.Association_Data_2_Career" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Association_Data_3_Age" >
+            <action android:name="nkubs.myapplication.Association_Data_3_Age" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity android:name="nkubs.myapplication.Association_Info" >
+            <action android:name="nkubs.myapplication.Association_Info" />
 
             <category android:name="android.intent.category.DEFAULT" />
         </activity>

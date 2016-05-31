@@ -1,11 +1,14 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 
-public class Fellows_Find_Accurate extends Activity {
+public class Fellows_Find_Accurate extends ActionBarActivity {
 
     private RadioGroup radioGroup;
     private Button button;
@@ -24,18 +27,18 @@ public class Fellows_Find_Accurate extends Activity {
 
     private android.os.Handler mhandler = new android.os.Handler() {
         public void handleMessage(Message msg) {//此方法在ui线程运行
-            if(msg.what > 2) {
+            if (msg.what > 2) {
                 Log.i("信息", "查询找到该用户");
-                SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
+                SharedPreferences preferences = getSharedPreferences("Info", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putInt("targetSid", msg.what);
                 editor.apply();
                 Intent intent = new Intent();
                 intent.setClass(Fellows_Find_Accurate.this, Fellows_Find_ResultAdd.class);
                 startActivity(intent);
-            }else if (msg.what == 0){
+            } else if (msg.what == 0) {
                 Toast.makeText(Fellows_Find_Accurate.this, "用户不存在或未公开手机号码！", Toast.LENGTH_SHORT).show();
-            }else{
+            } else {
                 Toast.makeText(Fellows_Find_Accurate.this, "查询异常！", Toast.LENGTH_SHORT).show();
             }
         }
@@ -46,6 +49,12 @@ public class Fellows_Find_Accurate extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_find_accurate);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 查找校友");
+
 
         radioGroup = (RadioGroup) findViewById(R.id.RadioGroup_Find_Accurate);
         final EditText editText = (EditText) findViewById(R.id.editText_find_accurate);
@@ -73,6 +82,7 @@ public class Fellows_Find_Accurate extends Activity {
             public void onClick(View view) {
                 new Thread(new Runnable() {
                     String text = editText.getText().toString();
+
                     @Override
                     public void run() {
                         try {
@@ -80,35 +90,32 @@ public class Fellows_Find_Accurate extends Activity {
                                 result = dbutil.find_mobile(text);
                                 Log.i("信息", "" + result);
                                 mhandler.obtainMessage(result).sendToTarget();
-                            }
-                            else{
+                            } else {
                                 result = dbutil.find_name(text);
                                 Log.i("信息", "" + result);
                                 mhandler.obtainMessage(result).sendToTarget();
                             }
-                        }catch (Exception h){
-                            mhandler.obtainMessage(2).sendToTarget();}
+                        } catch (Exception h) {
+                            mhandler.obtainMessage(2).sendToTarget();
                         }
-                    }).start();
+                    }
+                }).start();
             }
         });
 
     }
-}
 
 
-
-/*new Thread(
-        new Runnable() {
-public void run() {
-        try{
-        result = dbutil.find_mobile(String mobile);
-        Log.i("信息", "" + result);
-        if(result) {
-        mhandler.obtainMessage(_sid).sendToTarget();
-        } else{
-        mhandler.obtainMessage(1).sendToTarget();}
-        }catch (Exception g){
-        mhandler.obtainMessage(2).sendToTarget();}
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                System.out.println("Home is press");
+                finish();
+                return true;
+            default:
+                break;
         }
-        }).start();*/
+        return super.onOptionsItemSelected(item);
+    }
+
+}

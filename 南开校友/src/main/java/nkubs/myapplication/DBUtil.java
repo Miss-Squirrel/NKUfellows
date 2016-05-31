@@ -45,6 +45,22 @@ public class DBUtil {
 
     }
 
+    public int signUpCheck_invi(String inviname, String invicode, String myname) {
+        Log.i("信息", "进入 signUpCheck_invi 方法");
+        arrayList.clear();
+        brrayList.clear();
+        arrayList.add("inviname");
+        arrayList.add("invicode");
+        arrayList.add("myname");
+
+        brrayList.add(inviname);
+        brrayList.add(invicode);
+        brrayList.add(myname);
+
+        resultist = Soap.GetWebService("signUpCheck_invi", arrayList, brrayList);
+        return Integer.parseInt(resultist.get(0).toString());
+
+    }
 
     public Boolean insertUserInfo(int _sid, int gender, String city, String career, String mobile, String password, int pub) {
         Log.i("信息", "进入insertUserInfo方法");
@@ -188,21 +204,22 @@ public class DBUtil {
 
         List<Map<String, Object>> datalist = new ArrayList<Map<String, Object>>();
 
-        String contact1 = list.get(0);
-        String contact2 = list.get(1);
-        String contact3 = list.get(2);
+        String contact1 = "18237469835";
+        /*String contact2 = list.get(1);
+        String contact3 = list.get(2);*/
+
 
         arrayList.clear();
         brrayList.clear();
         resultist.clear();
         arrayList.add("_sid");
-        arrayList.add("contact1");
-        arrayList.add("contact2");
-        arrayList.add("contact3");
+        arrayList.add("contact");
+        /*arrayList.add("contact2");
+        arrayList.add("contact3");*/
         brrayList.add(Integer.toString(_sid));
         brrayList.add(contact1);
-        brrayList.add(contact2);
-        brrayList.add(contact3);
+       /* brrayList.add(contact2);
+        brrayList.add(contact3);*/
         resultist = Soap.GetWebService("contactMatch", arrayList, brrayList);
 
         //将网页返回值（ArrayList逐列装入Map中，用list封装）
@@ -553,6 +570,76 @@ public class DBUtil {
 
         return resultist.get(0).toString();
 
+    }
+
+    public String getCont(int _nid) {
+        Log.i("信息", "进入获取新闻网址方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+
+        arrayList.add("_nid");
+        brrayList.add(Integer.toString(_nid));
+
+        resultist = Soap.GetWebService("getCont", arrayList, brrayList);
+
+        return resultist.get(0).toString();
+    }
+
+    public int[] getData_City() {
+
+        int[] res = new int[4];
+
+        Log.i("信息", "进入获取城市分类数据方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+
+        resultist = Soap.GetWebService("getData_City", arrayList, brrayList);
+
+        for(int i=0; i<4;i++){
+            res[i]=Integer.parseInt(resultist.get(i));
+        }
+
+        return res;
+    }
+
+
+    public int[] getData_Career() {
+
+        int[] res = new int[4];
+
+        Log.i("信息", "进入获取行业分类数据方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+
+        resultist = Soap.GetWebService("getData_Career", arrayList, brrayList);
+
+        for(int i=0; i<4;i++){
+            res[i]=Integer.parseInt(resultist.get(i));
+        }
+
+        return res;
+    }
+
+
+    public int[] getData_Age() {
+
+        int[] res = new int[5];
+
+        Log.i("信息", "进入获取毕业年长分类数据方法");
+        arrayList.clear();
+        brrayList.clear();
+        resultist.clear();
+
+        resultist = Soap.GetWebService("getData_Age", arrayList, brrayList);
+
+        for(int i=0; i<5;i++){
+            res[i]=Integer.parseInt(resultist.get(i));
+        }
+
+        return res;
     }
 
 }

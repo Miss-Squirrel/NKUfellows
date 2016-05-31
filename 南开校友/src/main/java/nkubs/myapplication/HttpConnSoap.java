@@ -21,11 +21,11 @@ public class HttpConnSoap {
         // 10.0.2.2是让android模拟器访问本地（PC）服务器，不能写成127.0.0.1
         //11125是指端口号，即挂载到IIS上的时候开启的端口
         //Service1.asmx是指提供服务的页面
-        String ServerUrl = "http://10.0.2.2:53102/Service1.asmx";
+        String ServerUrl = "http://192.168.191.1/";
 
         //String soapAction="http://tempuri.org/LongUserId1";
         String soapAction = "http://tempuri.org/" + methodName;
-        //String data = "";
+        //String association_data_piechart = "";
         String soap = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"
                 + "<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
                 + "<soap:Body>";
@@ -74,7 +74,7 @@ public class HttpConnSoap {
             outStream.close();
             InputStream inStream = con.getInputStream();
 
-            //data=parser(inStream);
+            //association_data_piechart=parser(inStream);
             System.out.println("11");
             Values = inputStreamtovaluelist(inStream, methodName);
             System.out.println("Values.size()"+Values.size());

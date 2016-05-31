@@ -1,16 +1,19 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 
-public class Fellows_Find extends Activity{
+public class Fellows_Find extends ActionBarActivity {
 
     private Button button1;
     private Button button2;
@@ -33,6 +36,11 @@ public class Fellows_Find extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_find);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 我的校友");
 
         button1 = (Button) findViewById(R.id.button_find_accurate);
         button2 = (Button) findViewById(R.id.button_find_condition);
@@ -91,7 +99,17 @@ public class Fellows_Find extends Activity{
             }
         });
 
+    }
 
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

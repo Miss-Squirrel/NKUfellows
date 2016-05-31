@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="邀请人姓名"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:id="@+id/TextView_SignUpInvi_InviName"
         android:layout_marginTop="140dp"
         android:layout_alignParentTop="true"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="邀 请 码"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:id="@+id/TextView_SignUpInvi_Code"
         android:layout_below="@+id/TextView_SignUpInvi_InviName"
         android:layout_marginTop="40dp"/>
@@ -53,14 +53,13 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="您的姓名"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:id="@+id/TextView_SignUpInvi_Name"
         android:layout_below="@+id/TextView_SignUpInvi_Code"
         android:layout_marginTop="40dp"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
         android:id="@+id/EditText_SignUpInvi_Name"
         android:hint="请输入您的真实姓名"
         android:textColor="#000000"

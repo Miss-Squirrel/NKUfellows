@@ -1,11 +1,14 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class Mine_InfoChange extends Activity implements AdapterView.OnItemSelectedListener {
+public class Mine_InfoChange extends ActionBarActivity implements AdapterView.OnItemSelectedListener {
 
     private EditText et_city;
     private Spinner spinner;
@@ -87,6 +90,12 @@ public class Mine_InfoChange extends Activity implements AdapterView.OnItemSelec
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_infochange);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 账号管理");
+
 
         et_city = (EditText) findViewById(R.id.EditText_Mine_City);
         spinner = (Spinner) findViewById(R.id.Spinner_Mine_Career);
@@ -167,5 +176,16 @@ public class Mine_InfoChange extends Activity implements AdapterView.OnItemSelec
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

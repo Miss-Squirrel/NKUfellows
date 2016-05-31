@@ -1,10 +1,12 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 import java.util.HashMap;
@@ -48,6 +50,11 @@ public class Fellows_SenMsg_Detail extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_newmsg);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 收件箱");
+
         Intent intent = getIntent();
         _mid = intent.getIntExtra("_mid", 0);
 
@@ -71,5 +78,16 @@ public class Fellows_SenMsg_Detail extends Activity {
             }
         }).start();
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

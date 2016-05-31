@@ -1,18 +1,21 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class Mine_PwChange_Submit extends Activity {
+public class Mine_PwChange_Submit extends ActionBarActivity {
 
     private EditText et_p1;
     private EditText et_p2;
@@ -46,6 +49,11 @@ public class Mine_PwChange_Submit extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mine_pwchange_submit);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 账号管理");
 
         et_p1 = (EditText) findViewById(R.id.EditText_pwChange_newPassword);
         et_p2 = (EditText) findViewById(R.id.EditText_pwChange_PasswordRepeat);
@@ -84,5 +92,18 @@ public class Mine_PwChange_Submit extends Activity {
             }
         });
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent();
+                intent.setClass(Mine_PwChange_Submit.this, Mine.class);
+                startActivity(intent);
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

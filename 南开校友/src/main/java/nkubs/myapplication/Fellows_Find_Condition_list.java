@@ -1,11 +1,13 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -50,6 +52,12 @@ public class Fellows_Find_Condition_list extends Activity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_friends);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 条件查找");
+
+
         Intent intent = getIntent();
         school = intent.getStringExtra("school");
         graduation = intent.getStringExtra("graduation");
@@ -91,5 +99,17 @@ public class Fellows_Find_Condition_list extends Activity implements AdapterView
         Intent intent = new Intent();
         intent.setClass(Fellows_Find_Condition_list.this, Fellows_Find_ResultAdd.class);
         startActivity(intent);
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

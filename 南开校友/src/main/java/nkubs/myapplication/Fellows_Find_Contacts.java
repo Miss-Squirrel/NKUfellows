@@ -1,6 +1,6 @@
 package nkubs.myapplication;
 
-import android.app.Activity;
+import android.app.ActionBar;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,19 +8,20 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Message;
 import android.provider.ContactsContract;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 
-public class Fellows_Find_Contacts extends Activity implements AdapterView.OnItemClickListener {
+public class Fellows_Find_Contacts extends ActionBarActivity implements AdapterView.OnItemClickListener {
 
     private List<String> list = new ArrayList<String>();
     static int _sid;
@@ -54,6 +55,11 @@ public class Fellows_Find_Contacts extends Activity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_friends);
 
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 查找校友");
+
         SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
         _sid = preferences.getInt("_sid", 0);
 
@@ -62,8 +68,8 @@ public class Fellows_Find_Contacts extends Activity implements AdapterView.OnIte
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 int id = cursor.getInt(cursor.getColumnIndex(ContactsContract.Contacts._ID));
-               /* String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                Log.i("联系人", id + "   " + name);*/
+                String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+                Log.i("联系人", id + "   " + name);
                 Cursor c1 = contentResolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, new String[]{ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.TYPE}, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=" + id, null, null);
                 if (c1 != null) {
                     int i = 0;
@@ -112,6 +118,18 @@ public class Fellows_Find_Contacts extends Activity implements AdapterView.OnIte
         Intent intent = new Intent();
         intent.setClass(Fellows_Find_Contacts.this, Fellows_Find_ResultAdd.class);
         startActivity(intent);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                System.out.println("Home is press");
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

@@ -62,7 +62,7 @@ public class Fellows_NewMsg extends ActionBarActivity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
-        actionBar.setTitle(" 取消");
+        actionBar.setTitle(" 我的校友");
 
         final Intent intent = getIntent();
         recSid = intent.getIntExtra("recSid", 0);
@@ -101,26 +101,37 @@ public class Fellows_NewMsg extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        theme = et_theme.getText().toString();
-        cont = et_content.getText().toString();
-        System.out.println("信息内容"+theme + cont);
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try{
-                    result = dbUtil.sendMsg(senSid, recSid,theme,cont,date);
-                    Log.i("信息", "" + result);
-                    if(result){
-                        mhandler.obtainMessage(senSid).sendToTarget();
-                    }else{
-                        mhandler.obtainMessage(0).sendToTarget();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                theme = et_theme.getText().toString();
+                cont = et_content.getText().toString();
+                System.out.println("信息内容"+theme + cont);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try{
+                            result = dbUtil.sendMsg(senSid, recSid,theme,cont,date);
+                            Log.i("信息", "" + result);
+                            if(result){
+                                mhandler.obtainMessage(senSid).sendToTarget();
+                            }else{
+                                mhandler.obtainMessage(0).sendToTarget();
+                            }
+                        }catch (Exception g){
+                            mhandler.obtainMessage(2).sendToTarget();
+                        }
                     }
-                }catch (Exception g){
-                    mhandler.obtainMessage(2).sendToTarget();
-                }
-            }
-        }).start();
-        return true;
+                }).start();
+                return true;
+        }
     }
+
+
+
+
 }

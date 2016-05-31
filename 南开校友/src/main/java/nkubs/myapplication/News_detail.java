@@ -1,40 +1,52 @@
 package nkubs.myapplication;
 
+
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-
-
-public class Donation extends Activity {
-
+public class News_detail extends ActionBarActivity{
     private WebView webView;
     private ProgressDialog dialog;
+    private String add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.donation);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 南开新闻");
+
         //直接调用系统安装的浏览器打开web页面
         //String url = "http://www.baidu.com";
-         /*Uri uri = Uri.parse(url);
-         Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-         startActivity(intent);*/
-        init();
+        /*Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+        startActivity(intent);*/
+
+        Intent intent = getIntent();
+        add = intent.getStringExtra("add");
+        init(add);
+
     }
 
-    private void init() {
+    private void init(String add) {
         webView = (WebView) findViewById(R.id.webView_donation);
-        //webView.loadUrl("file://android_asset");  打开本地页面
         //加载web资源
-        webView.loadUrl("http://nkuef.nankai.edu.cn/donation/Donate");
-        webView.setInitialScale(120);
+        webView.loadUrl(add);
+        webView.setInitialScale(200);
         //覆盖WebView默认通过第三方或者系统浏览器打开网页的行为，使得网页可以在WebView中打开
         webView.setWebViewClient(new WebViewClient(){
             @Override
@@ -49,15 +61,6 @@ public class Donation extends Activity {
 
 
         WebSettings settings = webView.getSettings();
-        settings.setJavaScriptEnabled(true);
-        //支持屏幕缩放
-        settings.setSupportZoom(true);
-        settings.setBuiltInZoomControls(true);
-        //不显示webview缩放按钮
-        settings.setDisplayZoomControls(false);
-
-
-
         //WebView加载页面优先使用缓存加载
         settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.setWebChromeClient(new WebChromeClient() {
@@ -117,4 +120,14 @@ public class Donation extends Activity {
     }
 
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

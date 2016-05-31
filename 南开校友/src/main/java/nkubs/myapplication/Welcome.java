@@ -15,7 +15,7 @@ public class Welcome extends Activity {
 
     private ViewFlipper viewFlipper;
     //地址是整型
-    private int[] resID={R.drawable.img_5,R.drawable.img_7,R.drawable.img_8,R.drawable.img_10};
+    private int[] resID={R.drawable.img_5,R.drawable.img_7,R.drawable.img_8};
     private float starsX;
     private Button button;
 
@@ -34,12 +34,10 @@ public class Welcome extends Activity {
         for (int i =0;i<resID.length;i++){
             viewFlipper.addView(getImageView(i));
         }
-        /*
         viewFlipper.setInAnimation(this, R.anim.left_in); //设定切入动画效果样式
         viewFlipper.setOutAnimation(this, R.anim.left_out); //设定切出动画效果样式
-        viewFlipper.setFlipInterval(10000); //设定动画切换间隔时长，数字单位为毫秒，1000 ms = 1s
+        viewFlipper.setFlipInterval(5000); //设定动画切换间隔时长，数字单位为毫秒，1000 ms = 1s
         viewFlipper.startFlipping(); //动起来~~~
-        */
 
         //跳转至登录
         button = (Button) findViewById(R.id.button_welcome);

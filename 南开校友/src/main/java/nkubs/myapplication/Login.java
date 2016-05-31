@@ -56,7 +56,7 @@ public class Login extends Activity {
         //将java与layout文件进行关联，即将布局xml文件引入带activity当中
         setContentView(R.layout.activity_login);
         ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setDisplayHomeAsUpEnabled(false); //enable 返回<
         actionBar.setDisplayShowHomeEnabled(false); //移除icon
 
 

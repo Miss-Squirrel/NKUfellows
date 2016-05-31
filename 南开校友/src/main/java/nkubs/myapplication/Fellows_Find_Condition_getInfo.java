@@ -1,9 +1,12 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Fellows_Find_Condition_getInfo extends Activity {
+public class Fellows_Find_Condition_getInfo extends ActionBarActivity {
 
     private EditText et_school;
     private EditText et_graduation;
@@ -29,6 +32,11 @@ public class Fellows_Find_Condition_getInfo extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_find_condition);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 查找校友");
 
         et_school = (EditText) findViewById(R.id.EditText_find_condition_school);
         et_graduation = (EditText) findViewById(R.id.EditText_find_condition_graduation);
@@ -58,7 +66,17 @@ public class Fellows_Find_Condition_getInfo extends Activity {
             }
         });
 
+    }
 
-
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                System.out.println("Home is press");
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

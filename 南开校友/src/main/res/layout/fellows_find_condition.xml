@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="请选择性输入"
             android:id="@+id/EditText_find_condition_school"
             android:layout_alignTop="@+id/TextView_find_condition_school"
             android:layout_toEndOf="@+id/TextView_find_condition_school" />
@@ -40,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="请选择性输入"
             android:id="@+id/EditText_find_condition_graduation"
             android:layout_alignTop="@+id/TextView_find_condition_graduation"
             android:layout_toEndOf="@+id/TextView_find_condition_graduation" />
@@ -60,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="请选择性输入"
             android:id="@+id/EditText_find_condition_city"
             android:layout_alignTop="@+id/TextView_find_condition_city"
             android:layout_toEndOf="@+id/TextView_find_condition_city" />
@@ -81,6 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:hint="请选择性输入"
             android:id="@+id/EditText_find_condition_career"
             android:layout_alignTop="@+id/TextView_find_condition_career"
             android:layout_toEndOf="@+id/TextView_find_condition_career" />

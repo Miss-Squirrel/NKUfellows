@@ -8,6 +8,10 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\p_205.jpg",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\p_205.jpg"
+    },
+    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\radio_pressed.xml",
         "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\radio_pressed.xml"
     },
@@ -18,6 +22,10 @@
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_ab_holo_light.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_spinner_ab_holo_light.xml"
+    },
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\p_203.jpg",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\p_203.jpg"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\img_7.jpg",
@@ -56,24 +64,16 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_search_dropdown_dark.xml"
     },
     {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\off.jpg",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\off.jpg"
-    },
-    {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\img_10.jpg",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\img_10.jpg"
-    },
-    {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\img_6.jpg",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\img_6.jpg"
-    },
-    {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\on.jpg",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\on.jpg"
-    },
-    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_skype.jpg",
         "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\icon_skype.jpg"
+    },
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\p_204.jpg",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\p_204.jpg"
+    },
+    {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\p_201.jpg",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\p_201.jpg"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
@@ -92,8 +92,8 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\img_3.JPG",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\img_3.JPG"
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\p_206.jpg",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\p_206.jpg"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_ab_holo.xml",
@@ -112,16 +112,16 @@
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_ic_clear.xml"
     },
     {
+        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\p_202.jpg",
+        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\p_202.jpg"
+    },
+    {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_right_holo_dark.xml",
         "source": "E:\\NKUfellows\\南开校友\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\19.1.0\\res\\drawable\\abc_textfield_searchview_right_holo_dark.xml"
-    },
-    {
-        "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\img_2.JPG",
-        "source": "E:\\NKUfellows\\南开校友\\src\\main\\res\\drawable\\img_2.JPG"
     },
     {
         "merged": "E:\\NKUfellows\\南开校友\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_searchview_holo_light.xml",

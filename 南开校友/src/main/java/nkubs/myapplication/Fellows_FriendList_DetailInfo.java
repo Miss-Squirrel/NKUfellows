@@ -1,10 +1,12 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,6 +51,14 @@ public class Fellows_FriendList_DetailInfo extends Activity {
                 et_career.setText(hashMap.get("career"));
                 et_mobile.setText(hashMap.get("mobile"));
                 name = hashMap.get("name");
+                et_name.setEnabled(false);
+                et_gender.setEnabled(false);
+                et_school.setEnabled(false);
+                et_major.setEnabled(false);
+                et_graduation.setEnabled(false);
+                et_city.setEnabled(false);
+                et_career.setEnabled(false);
+                et_mobile.setEnabled(false);
             }else if(message.what == 2){
                 Toast.makeText(Fellows_FriendList_DetailInfo.this, "数据输出异常！", Toast.LENGTH_SHORT).show();
             } else {
@@ -66,6 +76,11 @@ public class Fellows_FriendList_DetailInfo extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_friendlist_detailinfo);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 好友列表");
 
         et_career = (EditText) findViewById(R.id.EditText_DetailInfo_career);
         et_gender = (EditText) findViewById(R.id.EditText_DetailInfo_gender);
@@ -113,8 +128,18 @@ public class Fellows_FriendList_DetailInfo extends Activity {
             }
         });
 
+    }
 
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

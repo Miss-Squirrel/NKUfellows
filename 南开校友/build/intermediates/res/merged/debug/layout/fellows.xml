@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="发件箱"
         android:id="@+id/button_fellows_senMsg"
-        android:layout_marginBottom="390dp"
+        android:layout_marginBottom="190dp"
         android:background="#f3f3f3"/>
 
 

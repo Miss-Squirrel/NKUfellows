@@ -21,7 +21,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/RadioButton_Find_Accurate_mobile"
             android:checked="true"/>
         <TextView
@@ -32,8 +32,8 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:id="@+id/RadioButton_Find_Accurate_name" />
+            android:layout_marginLeft="40dp"
+            android:id="@+id/RadioButto4n_Find_Accurate_name" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

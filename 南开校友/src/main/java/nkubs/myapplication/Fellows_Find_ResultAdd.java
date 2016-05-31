@@ -1,5 +1,6 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -8,7 +9,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +19,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 
-public class Fellows_Find_ResultAdd extends Activity {
+public class Fellows_Find_ResultAdd extends ActionBarActivity {
 
     private int targetSid;
     private int _sid;
@@ -81,6 +84,11 @@ public class Fellows_Find_ResultAdd extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_find_resultadd);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 查询结果");
 
         et_career = (EditText) findViewById(R.id.EditText_ResultList_career);
         et_gender = (EditText) findViewById(R.id.EditText_ResultList_gender);
@@ -154,6 +162,18 @@ public class Fellows_Find_ResultAdd extends Activity {
                 dialog.show();
             }
         });
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                System.out.println("Home is press");
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

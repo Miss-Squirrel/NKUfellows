@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Fellows_unrMsg extends Activity implements AdapterView.OnItemClickListener{
+public class Fellows_unrMsg extends ActionBarActivity implements AdapterView.OnItemClickListener{
     private ListView listView;
     private SimpleAdapter simpleAdapter;
     private List<Map<String,Object>> result;
@@ -50,7 +52,7 @@ public class Fellows_unrMsg extends Activity implements AdapterView.OnItemClickL
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
-        actionBar.setTitle(" 收件箱");
+        actionBar.setTitle(" 我的校友");
 
         SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
         recSid = preferences.getInt("_sid", 0);
@@ -82,5 +84,16 @@ public class Fellows_unrMsg extends Activity implements AdapterView.OnItemClickL
         intent.putExtra("_mid", _mid);
         intent.setClass(Fellows_unrMsg.this, Fellows_RecMsg_Detail.class);
         startActivity(intent);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

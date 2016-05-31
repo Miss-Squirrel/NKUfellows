@@ -22,12 +22,20 @@
         android:background="#f3f3f3" />
 
     <Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="我的邀请码"
+    android:id="@+id/button_Mine_MyInvicode"
+        android:layout_marginBottom="20dp"
+    android:background="#f3f3f3"/>
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="我的邀请码"
-        android:id="@+id/button_Mine_MyInvicode"
-        android:layout_marginBottom="430dp"
-        android:background="#f3f3f3"/>
+        android:text="退出账号"
+        android:id="@+id/button_Mine_Exit"
+        android:background="#f3f3f3"
+        android:layout_marginBottom="190dp"/>
 
 
 
@@ -37,7 +45,6 @@
         android:layout_height="wrap_content"
         android:name="nkubs.myapplication.Fragment_Navigation"
         tools:layout="@layout/fragment_navigation" />
-
 
 
 </LinearLayout>

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,7 +19,7 @@ import java.util.Map;
 
 
 
-public class Fellows_FriendList extends Activity implements AdapterView.OnItemClickListener{
+public class Fellows_FriendList extends ActionBarActivity implements AdapterView.OnItemClickListener{
 
 
     private ListView listView;
@@ -55,7 +57,7 @@ public class Fellows_FriendList extends Activity implements AdapterView.OnItemCl
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
-        actionBar.setTitle(" 好友列表");
+        actionBar.setTitle(" 我的校友");
 
         SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
         _sid = preferences.getInt("_sid", 0);
@@ -93,6 +95,19 @@ public class Fellows_FriendList extends Activity implements AdapterView.OnItemCl
        /* String text =listView.getItemAtPosition(position)+"";
         Toast.makeText(this, "position=" + position + text, Toast.LENGTH_SHORT).show();*/
 
+    }
+
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: //对用户按home icon的处理，本例只需关闭activity，就可返回上一activity，即主activity。
+                System.out.println("Home is press");
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

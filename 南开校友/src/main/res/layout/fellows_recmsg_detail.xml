@@ -75,6 +75,4 @@
         android:hint="消息内容"
         />
 
-
-
 </LinearLayout>

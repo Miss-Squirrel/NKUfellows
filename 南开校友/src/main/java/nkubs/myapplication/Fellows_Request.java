@@ -1,11 +1,14 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class Fellows_Request extends Activity implements AdapterView.OnItemClickListener{
+public class Fellows_Request extends ActionBarActivity implements AdapterView.OnItemClickListener{
     private DBUtil dbUtil;
     private List<Map<String,Object>> result;
     private List<Map<String,Object>> datalist;
@@ -45,6 +48,11 @@ public class Fellows_Request extends Activity implements AdapterView.OnItemClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_friends);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 我的校友");
 
 
         listView = (ListView) findViewById(R.id.listView_friends);
@@ -80,5 +88,16 @@ public class Fellows_Request extends Activity implements AdapterView.OnItemClick
         Intent intent = new Intent();
         intent.setClass(Fellows_Request.this, Fellows_Request_Dealing.class);
         startActivity(intent);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

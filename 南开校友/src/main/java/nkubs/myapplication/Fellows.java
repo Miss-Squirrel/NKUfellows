@@ -43,7 +43,7 @@ public class Fellows extends ActionBarActivity {
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowHomeEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
-        actionBar.setTitle(" 我的校友");
+        actionBar.setTitle(" 主界面");
 
         SharedPreferences preferences = getSharedPreferences("Info",MODE_PRIVATE);
         recSid = preferences.getInt("_sid", 0);

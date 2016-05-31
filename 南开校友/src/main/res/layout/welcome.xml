@@ -14,7 +14,7 @@
             android:layout_height="50dp"
             android:text="南以离开"
             android:id="@+id/button_welcome"
-            android:layout_marginTop="600dp"
+            android:layout_marginTop="520dp"
             android:layout_gravity="center_horizontal" />
 
 

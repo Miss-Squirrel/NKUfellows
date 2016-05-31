@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="学号"
-        android:textSize="27sp"
+        android:textSize="25sp"
         android:id="@+id/TextView_SignUp1_Sid"
         android:layout_marginTop="140dp"
         android:layout_alignParentTop="true"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="真实姓名"
-        android:textSize="27sp"
+        android:textSize="25sp"
         android:id="@+id/TextView_SignUp1_RealName"
         android:layout_below="@+id/TextView_SignUp1_Sid"
         android:layout_marginTop="40dp"/>
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="手机号码"
-        android:textSize="27sp"
+        android:textSize="25sp"
         android:id="@+id/TextView_SignUp1_MobileNum"
         android:layout_below="@+id/TextView_SignUp1_RealName"
         android:layout_marginTop="40dp"/>
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="密码"
-        android:textSize="27sp"
+        android:textSize="25sp"
         android:id="@+id/TextView_SignUp1_mobileNum"
         android:layout_below="@+id/TextView_SignUp1_MobileNum"
         android:layout_marginTop="40dp"/>

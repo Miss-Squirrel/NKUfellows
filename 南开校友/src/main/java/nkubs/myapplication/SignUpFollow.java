@@ -2,6 +2,9 @@ package nkubs.myapplication;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -38,16 +41,29 @@ public class SignUpFollow extends Activity implements RadioGroup.OnCheckedChange
 
     private android.os.Handler mhandler = new android.os.Handler() {
         public void handleMessage(Message msg) {//此方法在ui线程运行
-            if(msg.what > 2) {
+            if (msg.what > 2) {
                 SharedPreferences preferences = getSharedPreferences("Info", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putInt("_sid", msg.what);
                 editor.putBoolean("save", false);
                 editor.apply(); //一定得commit，否则不生效！
-                Log.i("信息", "注册成功");
-                Intent intent = new Intent();
-                intent.setClass(SignUpFollow.this, Login.class);
-                startActivity(intent);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(SignUpFollow.this);
+                builder.setTitle("注册成功");
+                builder.setMessage("您的学号为"+msg.what+",请牢记！");
+                builder.setPositiveButton("记住了", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.i("信息", "注册成功");
+                        Intent intent = new Intent();
+                        intent.setClass(SignUpFollow.this, Login.class);
+                        startActivity(intent);
+                    }
+                });
+                builder.setCancelable(true);
+                Dialog dialog = builder.create();
+                dialog.show();
+
             }else if (msg.what == 1){
                 Toast.makeText(SignUpFollow.this, "注册失败！", Toast.LENGTH_SHORT).show();
             }else{
@@ -106,7 +122,7 @@ public class SignUpFollow extends Activity implements RadioGroup.OnCheckedChange
         list.add("金融");
         list.add("信息产业");
         list.add("工商管理");
-        list.add("能源开采");
+        list.add("其他");
         arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,list);
         //设置一个下拉列表样式
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

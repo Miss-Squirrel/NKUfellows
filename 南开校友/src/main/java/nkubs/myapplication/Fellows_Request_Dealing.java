@@ -1,5 +1,6 @@
 package nkubs.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -78,6 +79,11 @@ public class Fellows_Request_Dealing extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fellows_find_resultadd);
+
+        ActionBar actionBar = getActionBar();
+        actionBar.setDisplayShowHomeEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(true); //enable 返回<
+        actionBar.setTitle(" 好友请求");
 
         et_career = (EditText) findViewById(R.id.EditText_ResultList_career);
         et_gender = (EditText) findViewById(R.id.EditText_ResultList_gender);

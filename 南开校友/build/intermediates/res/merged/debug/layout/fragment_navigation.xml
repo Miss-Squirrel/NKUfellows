@@ -18,6 +18,7 @@
             android:layout_weight="1"
             android:button="@null"
             android:text="新闻活动"
+            android:textSize="15sp"
             android:gravity="center"
             android:background="@drawable/radio_pressed"/>
 
@@ -28,8 +29,10 @@
             android:layout_weight="1"
             android:button="@null"
             android:text="我的校友"
+            android:textSize="15sp"
             android:gravity="center"
             android:background="@drawable/radio_pressed"/>
+
         <RadioButton
             android:id="@+id/radioButton_navigation_donation"
             android:layout_width="0dp"
@@ -37,6 +40,7 @@
             android:layout_weight="1"
             android:button="@null"
             android:text="捐赠母校"
+            android:textSize="15sp"
             android:gravity="center"
             android:background="@drawable/radio_pressed"/>
         <RadioButton
@@ -46,6 +50,7 @@
             android:layout_weight="1"
             android:button="@null"
             android:text="校友会"
+            android:textSize="15sp"
             android:gravity="center"
             android:background="@drawable/radio_pressed"/>
         <RadioButton
@@ -55,6 +60,7 @@
             android:layout_weight="1"
             android:button="@null"
             android:text="账号管理"
+            android:textSize="15sp"
             android:gravity="center"
             android:background="@drawable/radio_pressed"/>
     </RadioGroup>

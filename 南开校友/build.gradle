@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.1.0'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile files('libs/servlet-api.jar')
+    compile files('libs/mpandroidchartlibrary-2-1-6.jar')
 }

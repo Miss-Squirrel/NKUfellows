@@ -10,7 +10,7 @@
 
     <ViewFlipper
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="217dp"
         android:id="@+id/viewFlipper_news"
         android:layout_weight="0.2">
     </ViewFlipper>
